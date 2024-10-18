@@ -11,7 +11,7 @@ window.onload = function() {
     e.preventDefault();
 
     // Send a message with the text 'Hello Treehouse!' to the receiver window.
-    receiver.postMessage("Hello Treehouse!", "https://woolhugger1912.github.io");
+    receiver.postMessage("Hello Treehouse!", "https://woolhugger1912.github.io/DPtable.html");
 }
 
   // Add an event listener that will execute the sendMessage() function
