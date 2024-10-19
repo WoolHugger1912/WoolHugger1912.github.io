@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Parent Window</title>
+</head>
+<body>
+
+  <h1>Parent</h1>
+  <p>Send Message: <button id="message_button">Bonjouni Monsieur iframe</button></p>
+  <p>Got Message:</p>
+  <div id="results"></div>
+</br>
+
+<script>
+  // outdated support for event listener like iframe.html
+  function bindEvent(element, eventName, eventHandler) {
+    if (element.addEventListener){
+      element.addEventListener(eventName, eventHandler, false);
+    } if else (element.attachEvent) {
+      element.attachEvent('on' + eventName, eventHandler);
+    }
+  }
+
+  // find gist for iframe.html
+  var iframeSource = ;
+
+  // how much of this can be done html?
+  var iframe = document.createElement('iframe');
+  iframe.setAttribute('src', iframeSource);
+  iframe.setAttribute('id', 'the_iframe');
+  iframe.style.width = 450 + 'px';
+  iframe.style.height = 200 + 'px';
+  document.body.appendChild(iframe);
+
+  // send message to child iF
+  var sendMessage = function(msg) {
+    // refer to previous message not
+    iframeEl.contentWindow.postMessage(msg, '*');
+  };
+
+  // send rando message
+  bindEvent(messageButton, 'click', function (e) {
+    var random = Math.random();
+    sendMessage('' + random);
+  });
+
+  // hear child message
+  bindEvent(window, 'message', function (e) {
+    results.innerHTML = e.data;
+  });
+ </script>
+</body>
+</html>
