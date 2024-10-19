@@ -33,6 +33,10 @@
   iframe.style.height = 200 + 'px';
   document.body.appendChild(iframe);
 
+  var iframeEl = document.getElementById('the_iframe'),
+      messageButton = document.getElementById('message_button'),
+      results = document.getElementById('results');
+
   // send message to child iF
   var sendMessage = function(msg) {
     // refer to previous message not
