@@ -13,7 +13,7 @@
 <body>
 
   <h1>Bonjourno</h1>
-  <p>Send Message: <button id="message_button"></p>
+  <p>Send Message: <button id="message_button">Hi</button></p>
   <p>Got Message:</p>
   <div id="results"></div>
 
@@ -45,7 +45,7 @@
     bindEvent(messageButton, 'click', function (e) {
       var random = Math.random();
       sendMessage('' + random);   
-    }
+    };
   </script>
 </body>
 </html>
