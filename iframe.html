@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>iFrame Window</title>
+  <style>
+    body {
+      background-color: #D53C2F;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Bonjourno</h1>
+  <p>Send Message: <button id="message_button"></p>
+  <p>Got Message:</p>
+  <div id="results"></div>
+
+  <script>
+    // addEventListener support for Internet Explorer, prob scrap
+    function bindEvent(element, eventName, eventHandler) {
+      if (element.addEventListener) {
+        element.addEventListener(eventName, eventHandler, false);
+      } else if (element.attachEvent) {
+        element.attachEvent('on' + eventName, eventHandler);
+      }
+    }
+
+    // Sending message to parent
+    var sendMessage = function (msg) {
+      // for security try alternative for asteriks
+      window.parent.postMessage(msg, '*');
+    };
+
+    var results = document.getElementById('results'),
+      messageButton = document.getElementById('message_button');
+
+    // listen to parent window messages
+    bindEvent(window, 'message', function (e) {
+      results.innerHTML = e.data;
+    });
+
+    // rando numbers per click
+    bindEvent(messageButton, 'click', function (e) {
+      var random = Math.random();
+      sendMessage('' + random);   
+  </script>
+</body>
+</html>
