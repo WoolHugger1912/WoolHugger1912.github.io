@@ -15,7 +15,7 @@
 <script>
   // outdated support for event listener like iframe.html
   function bindEvent(element, eventName, eventHandler) {
-    if (element.addEventListener){
+    if (element.addEventListener) {
       element.addEventListener(eventName, eventHandler, false);
     } else if (element.attachEvent) {
       element.attachEvent('on' + eventName, eventHandler);
