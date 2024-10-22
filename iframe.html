@@ -29,10 +29,11 @@
     
     var results = document.getElementById('results'),
       messageButton = document.getElementById('message_button');
+    const prlnt = localStorage.getItem("parentmes");
 
     // listen to parent window messages and find way to make localStorage stick
     bindEvent(window, 'message', function (e) {
-     results = localStorage.getItem("parentmes");
+     innerHTML.results = "pr1nt";
     });
 
     // rando numbers per click
