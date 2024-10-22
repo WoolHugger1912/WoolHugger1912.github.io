@@ -33,7 +33,7 @@
     // listen to parent window messages and find way to make localStorage stick
     bindEvent(window, 'message', function (e) {
       results.innerHTML = e.data;
-      localStorage.setItem();
+      localStorage.setItem("parentmes", e.data);
     });
 
     // rando numbers per click
