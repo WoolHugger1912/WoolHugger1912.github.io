@@ -46,7 +46,7 @@
   // send rando message
   bindEvent(messageButton, 'click', function (e) {
     var random = Math.random();
-    localStorage.setItem("parentmes", "random");
+    localStorage.setItem("parentmes", random);
     sendMessage(localStorage.getItem("parentmes"));
   });
 
