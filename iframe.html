@@ -21,6 +21,12 @@
       }
     }
 
+    // Sending the message
+    var sendMessage = function (msg) {
+      // make sure string sent is stringified JSON
+      window.parent.postMessage(msg, '*');
+    };
+    
     var results = document.getElementById('results'),
       messageButton = document.getElementById('message_button');
 
