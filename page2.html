@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<h1>
+<p id="answer1">Your favourite browser is:&nbsp;</p>
+<p id="answer2">Your favourite browser is:&nbsp;</p>
+<p id="answer3">Your favourite browser is:&nbsp;</p>
+</h1>
+<script>
+document.getElementById("answer1").innerHTML += localStorage.getItem("browsers");
+document.getElementById("answer2").innerHTML += localStorage.getItem("food");
+document.getElementById("answer3").innerHTML += localStorage.getItem("game");
+</script>
+</body>
+</html>

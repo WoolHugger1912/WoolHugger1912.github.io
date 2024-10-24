@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<h1><center>Short Survey</center></h1><big>
+    <form action="afterSubmission.html" method="get">
+    <caption>1. What is your favourite browser?</caption>
+    <input id="browserValue" list="browsers">
+    <datalist id="browsers" >
+        <option value="Internet Explorer">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">
+    </datalist>
+    <br>
+    <br>
+    <caption>2. What is your favourite food group?</caption>
+    <input id="foodValue" list="food">
+    <datalist id="food">
+        <option value="Meats/Alternatives">
+        <option value="Vegetables">
+        <option value="Dairy Products">
+        <option value="Fruits">
+        <option value="Grains">
+        <option value="Confections (Junk Food)">
+    </datalist>
+    <br>
+    <br>
+    <caption>3. What is your favourite game genre?</caption>
+    <input id="gameValue" list="game">
+    <datalist id="game">
+        <option value="FPS">First Person Shooter (Ex: Halo, Call of Duty)
+        <option value="TPS">Third Person Shooter (Ex: Ghost Recon, Gear of War)
+        <option value="Puzzle">Puzzle (Ex: Sudoku, Minesweeper)
+        <option value="Sim">Simulation (Ex: Minecraft, SimCity)
+        <option value="Other">Other (Please specify the genre)&nbsp;<input type="text" name="other_genre">
+       </datalist>
+    <br>
+    <br>
+    <input type="button" onclick="saveData()" value="Submit">
+    </form>
+    <script>
+    function saveData(){
+    var q1 = document.getElementById("browserValue");
+    var q2 = document.getElementById("foodValue");
+    var q3 = document.getElementById("gameValue");
+    localStorage.setItem("browsers", q1.value);
+    localStorage.setItem("food", q2.value);
+    localStorage.setItem("game", q3.value);
+
+    }
+    </script>
+</body>
+</html>
