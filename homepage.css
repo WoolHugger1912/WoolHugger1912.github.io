@@ -1,0 +1,9 @@
+div {
+    a.one:link {
+        background-color:#01395a;
+        color: #ecb011;
+        padding: 19px 12px;
+        text-align: center;
+        display: inline-block;
+    }
+}

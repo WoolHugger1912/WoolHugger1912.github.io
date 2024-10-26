@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Formula Template</title>
+</head>
+<body>
+<h1><center>Inventory</center></h1>
+    <form action="mathInven.html" method="get">
+    <caption>How many 102 Black Dips?</caption>
+    <div><input id="102BD" name="math" type="number"></div>
+    <input id="entEr" type="button" onclick="saveData(); redTest()" value="Submit">
+    <br>
+    <br>
+    <caption>How much Blue?</caption>
+    <div name="blue"><input id="formBlue" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Yellow?</caption>
+    <div name="yellow"><input id="formYellow" name="math" type="text"></div>
+    <br>
+    <br>
+    <input id="tst" list="dyeLot">
+    <datalist id="dyeLot">
+        <option value="102 Black">102 Black</option>
+        <option value="B91 Tan">B91 Tan</option>
+        <option value="113 Blue">113 Blue</option>
+    </datalist>
+    <br>
+    <br>
+    <input id="entEr" type="button" onclick="canRead()" value="Submit">
+    </form>
+
+    <script>
+        // saveData(); redTest(); 
+    
+    // localStorage.setItem('score', JSON.stringify(playx.innerHTML));
+    var s1 = document.getElementById("102BD");
+    var s2 = document.getElementById("formBlue");
+    var s3 = document.getElementById("formYellow");
+    var s4 = document.getElementById("formBlack");
+    var s5 = document.getElementById("formDF");
+    var s6 = document.getElementById("formDS");
+    var s7 = document.getElementById("formDL");
+    var s8 = document.getElementById("formPL");
+    var s9 = document.getElementById("formLC");
+
+    document.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            document.getElementById("entEr").click();
+        }
+    })
+
+    function saveData() {
+    localStorage.setItem("blue", q2.value);
+    localStorage.setItem("yellow", q3.value);
+    };
+
+    function redTest() {  
+    var rLS = localStorage.getItem("red");
+    var rN = document.getElementById("formRed").value;
+    var q1 = rLS -= rN;
+
+    localStorage.setItem("red", q1);
+    };
+
+    function canRead() {
+        var rLS
+        var bLS
+        var yLS
+        var blLS
+        var dfLS
+        var dsLS
+        var dlLS
+        var phlLS
+        var lcLS
+        var dpQ = document.getElementById("102BD").value;
+
+        if (document.getElementById("tst").value == "102 Black") {
+            alert("102 Black");
+        } else if (document.getElementById("tst").value == "B91 Tan") {
+            alert("B91 Tan");
+        } else if (document.getElementById("tst").value == "113 Blue") {
+            alert("113 Blue");
+        }
+    };
+    </script>
+</body>
+</html>
+

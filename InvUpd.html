@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Inventory Updater Temp</title>
+</head>
+<body>
+<h1><center>Inventory</center></h1>
+    <form action="mathInven.html" method="get">
+    <caption>How much Red?</caption>
+    <div name="red"><input id="formRed" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Blue?</caption>
+    <div name="blue"><input id="formBlue" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Yellow?</caption>
+    <div name="yellow"><input id="formYellow" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Black?</caption>
+    <div name="black"><input id="formBlack" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much DeFoamer?</caption>
+    <div name="defoamer"><input id="formDF" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Dye Settler?</caption>
+    <div name="dyesettler"><input id="formDS" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Dye Locker?</caption>
+    <div name="dyelocker"><input id="formDL" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much pH Leveler?</caption>
+    <div name="phleveler"><input id="formPL" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Liquor Cleaner?</caption>
+    <div name="liquorcleaner"><input id="formLC" name="math" type="text"></div>
+    <br>
+    <br>
+    <input id="entEr" type="button" onclick="saveData()" value="Submit">
+    </form>
+
+    <script>
+    
+    // localStorage.setItem('score', JSON.stringify(playx.innerHTML));
+    var q1 = document.getElementById("formRed");
+    var q2 = document.getElementById("formBlue");
+    var q3 = document.getElementById("formYellow");
+    var q4 = document.getElementById("formBlack");
+    var q5 = document.getElementById("formDF");
+    var q6 = document.getElementById("formDS");
+    var q7 = document.getElementById("formDL");
+    var q8 = document.getElementById("formPL");
+    var q9 = document.getElementById("formLC");
+
+    document.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            document.getElementById("entEr").click();
+        }
+    })
+
+    function saveData() {
+    localStorage.setItem("red", q1.value)
+    localStorage.setItem("blue", q2.value);
+    localStorage.setItem("yellow", q3.value);
+    localStorage.setItem("black", q4.value);
+    localStorage.setItem("defoamer", q5.value);
+    localStorage.setItem("dyesettler", q6.value);
+    localStorage.setItem("dyelocker", q7.value);
+    localStorage.setItem("phleveler", q8.value);
+    localStorage.setItem("liquorcleaner", q9.value);
+    };
+    </script>
+</body>
+</html>
+
