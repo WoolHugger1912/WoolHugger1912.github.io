@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Master Inventory</title>
+<style>
+table, th, td {
+  border: 1px solid;
+}
+
+table {
+  width: 100%;
+}
+</style>
+</head>
+<body>
+<form action="mathInven.html" method="get">
+<table>
+   <th>Name</th>
+   <th>Total (Weigh Area & Storage)</th>
+<tb>
+ <tr>
+   <td>Red</td>
+   <td id="redColor"></td>
+ </tr>
+ <tr>
+  <td>Blue</td>
+  <td id="blueColor"></td>
+ </tr>
+ <tr>
+  <td>Yellow</td>
+  <td id="yellowColor"></td>
+ </tr>
+ <tr>
+  <td>Black</td>
+  <td id="blackColor"></td>
+ </tr>
+ <tr>
+  <td>DeFoamer</td>
+  <td id="deFoamer"></td>
+ </tr>
+ <tr>
+  <td>Dye Settler</td>
+  <td id="dyeSettler"></td>
+ </tr>
+ <tr>
+  <td>Dye Locker</td>
+  <td id="dyeLocker"></td>
+ </tr>
+ <tr>
+  <td>pH Leveler</td>
+  <td id="phLeveler"></td>
+ </tr>
+ <tr>
+  <td>Liquor Cleaner</td>
+  <td id="liquorCleaner"></td>
+ </tr>
+</tb>
+</table>
+</form>
+
+<script>
+document.getElementById("redColor").textContent += localStorage.getItem("red");
+document.getElementById("blueColor").innerHTML += localStorage.getItem("blue");
+document.getElementById("yellowColor").innerHTML += localStorage.getItem("yellow");
+document.getElementById("blackColor").innerHTML += localStorage.getItem("black");
+document.getElementById("deFoamer").innerHTML += localStorage.getItem("defoamer");
+document.getElementById("dyeSettler").innerHTML += localStorage.getItem("dyesettler");
+document.getElementById("dyeLocker").innerHTML += localStorage.getItem("dyelocker");
+document.getElementById("phLeveler").innerHTML += localStorage.getItem("phleveler");
+document.getElementById("liquorCleaner").innerHTML += localStorage.getItem("liquorcleaner");
+</script>
+</body>
+</html>

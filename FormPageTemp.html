@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Formula Template</title>
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    .wrapper {
+        width:200px;
+    }
+
+    .customer {
+        width:75px;
+    }
+</style>
+</head>
+<body>
+<h1>Inventory</h1>
+    <form action="mathInven.html" method="get">
+    <caption>What Color?</caption>
+    <div class="wrapper"><select id="tst" class="form-control" onfocus="this.size=10;" onblur="this.size=1;" onchange="this.size=1; this.blur();">
+        <option></option>
+        <optgroup label="001 - 112">
+        <option>036 Green</option>
+        <option>039 Tan</option>
+        <option value="069 Gold">069 Gold</option>
+        <option value="102 Black">102 Black</option>
+        <option>103 Green</option>
+        <option>104 Green</option>
+        <option>105 Green</option>
+        <option>106 Green</option>
+        <option>107 Green</option>
+        <option>108 Green</option>
+        <option>109 Blue</option>
+        <option>110 Blue</option>
+        <option>111 Blue</option>
+        <option>112 Blue</option>
+        </optgroup>
+        <optgroup label="All Else">
+        <option value="113 Blue">113 Blue</option>
+        <option value="B91 Tan">B91 Tan</option>
+        </optgroup>
+    </select></div>
+    <br>
+    <br>
+    <caption>How many?</caption>
+    <p><input id="dipQuan" class="customer" name="math" type="number"></p>
+    <br>
+    <br>
+    <caption>What's the weight?</caption>
+    <p><input type="radio" name="tyPe" id="bigDip"><label for="bigDip">525 lbs.</label></p>
+    <p><input type="radio" name="tyPe" id="smallDip"><label for="smallDip">190 lbs.</label></p>
+    <p><input type="radio" name="tyPe" id="smallerDip"><label for="smallerDip">90 lbs.</label></p>
+    <p><input type="radio" name="tyPe" id="cusTom"><input id="cuStom" class="customer" type="number"></p>
+    <br>
+    <br>
+    <input id="entEr" type="button" onclick="canRead()" value="Submit">
+    </form>
+
+    <script>
+        // canRead(); saveData(); redTest(); 
+    
+    // localStorage.setItem('score', JSON.stringify(playx.innerHTML));
+    var s1 = document.getElementById("102BD");
+    var s2 = document.getElementById("formBlue");
+    var s3 = document.getElementById("formYellow");
+    var s4 = document.getElementById("formBlack");
+    var s5 = document.getElementById("formDF");
+    var s6 = document.getElementById("formDS");
+    var s7 = document.getElementById("formDL");
+    var s8 = document.getElementById("formPL");
+    var s9 = document.getElementById("formLC");
+
+    document.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            document.getElementById("entEr").click();
+        }
+    })
+
+    function saveData() {
+    localStorage.setItem("blue", q2.value);
+    localStorage.setItem("yellow", q3.value);
+    };
+
+    function redTest() {  
+    var rLS = localStorage.getItem("red");
+    var rN = document.getElementById("formRed").value;
+    var q1 = rLS -= rN;
+
+    localStorage.setItem("red", q1);
+    };
+
+    function canRead() {
+        var rLS = localStorage.getItem("red");
+        var bLS = localStorage.getItem("blue");
+        var yLS = localStorage.getItem("yellow");
+        var blLS = localStorage.getItem("black");
+        var dfLS = localStorage.getItem("defoamer");
+        var dsLS = localStorage.getItem("dyesettler");
+        var dlLS = localStorage.getItem("dyelocker");
+        var phlLS = localStorage.getItem("phleveler");
+        var lcLS = localStorage.getItem("liquorcleaner");
+        var dpQ = document.getElementById("dipQuan").value;
+
+        if (document.getElementById("dipQuan").value == "") {
+            alert("Please enter how many!");
+        };
+        
+        if (document.getElementById("bigDip").checked) {
+            w = 525;
+        } else if (document.getElementById("smallDip").checked) {
+            w = 190;
+        } else if (document.getElementById("smallerDip").checked) {
+            w = 90;
+        } else if (document.getElementById("cusTom").checked) {
+            w = document.getElementById("cuStom").value;
+        };
+
+        if (document.getElementById("tst").value == "102 Black") {
+            var q2 = bLS -= (w * 0.0015) * dpQ;
+            var q3 = yLS -= (w * 0.0005) * dpQ;
+            var q4 = blLS -= (w * 0.047) * dpQ;
+            var q5 = dfLS -= (w * 0.005) * dpQ;
+            var q6 = dsLS -= (w * 0.02) * dpQ;
+            var q7 = dlLS -= (w * 0.016) * dpQ;
+            var q8 = phlLS -= (w * 0.02) * dpQ;
+            var q9 = lcLS -= (w * 0.02) * dpQ;
+            
+        } else if (document.getElementById("tst").value == "069 Tan") {
+            var q1 = rLS -= (w * 0.00222) * dpQ;
+            var q2 = bLS -= (w * 0.0005) * dpQ;
+            var q3 = yLS -= (w * 0.0338) * dpQ;
+            var q5 = dfLS -= (w * 0.0025) * dpQ;
+            var q6 = dsLS -= (w * 0.015) * dpQ;
+            var q7 = dlLS -= (w * 0.01) * dpQ;
+        };
+    localStorage.setItem("red", d1)
+    localStorage.setItem("blue", d2);
+    localStorage.setItem("yellow", d3);
+    localStorage.setItem("black", d4);
+    localStorage.setItem("Acetic Acid", c1);
+    localStorage.setItem("Albaflow", c2);
+    localStorage.setItem("Eriopon Lan", c3);
+    localStorage.setItem("Formic Acid", c4);
+    localStorage.setItem("Hydrogen Peroxide", c5);
+    localStorage.setItem("Miralan LTD", c6);
+    localStorage.setItem("Miralan TOP", c7);
+    localStorage.setItem("Soda Ash", c8);
+    localStorage.setItem("Sodium Acetate", c9);
+    localStorage.setItem("Sodium Sulfate", c10);
+    localStorage.setItem("Ultravon CN", c11);
+    };
+    </script>
+</body>
+</html>
+

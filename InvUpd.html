@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Inventory Updater Temp</title>
+</head>
+<body>
+<h1><center>Inventory</center></h1>
+    <form action="mathInven.html" method="get">
+    <caption>How much Red?</caption>
+    <div name="red"><input id="formRed" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Blue?</caption>
+    <div name="blue"><input id="formBlue" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Yellow?</caption>
+    <div name="yellow"><input id="formYellow" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Black?</caption>
+    <div name="black"><input id="formBlack" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Acetic Acid?</caption>
+    <div name="Acetic Acid"><input id="formAA" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Albaflow SF Plus?</caption>
+    <div name="Albaflow"><input id="formASP" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Eriopon Lan?</caption>
+    <div name="Eriopon Lan"><input id="formEL" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Formic Acid?</caption>
+    <div name="Formic Acid"><input id="formFA" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Hydrogen Peroxide?</caption>
+    <div name="Hydrogen Peroxide"><input id="formHP" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Miralan LTD?</caption>
+    <div name="Miralan LTD"><input id="formML" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Miralan TOP?</caption>
+    <div name="Miralan TOP"><input id="formMT" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Soda Ash?</caption>
+    <div name="Soda Ash"><input id="formSA" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Sodium Acetate?</caption>
+    <div name="Sodium Acetate"><input id="formSAc" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Sodium Sulfate?</caption>
+    <div name="Sodium Sulfate"><input id="formSS" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Ultravon CN?</caption>
+    <div name="Ultravon CN"><input id="formUC" name="math" type="text"></div>
+    <br>
+    <br>
+    <input id="entEr" type="button" onclick="saveData()" value="Submit">
+    </form>
+
+    <script>
+    
+    // localStorage.setItem('score', JSON.stringify(playx.innerHTML));
+    var d1 = document.getElementById("formRed");
+    var d2 = document.getElementById("formBlue");
+    var d3 = document.getElementById("formYellow");
+    var d4 = document.getElementById("formBlack");
+    var c1 = document.getElementById("formAA");
+    var c2 = document.getElementById("formASP");
+    var c3 = document.getElementById("formEL")
+    var c4 = document.getElementById("formFA");
+    var c5 = document.getElementById("formHP");
+    var c6 = document.getElementById("formML");
+    var c7 = document.getElementById("formMT");
+    var c8 = document.getElementById("formSA");
+    var c9 = document.getElementById("formSAc");
+    var c10 = document.getElementById("formSS");
+    var c11 = document.getElementById("formUC");
+
+    document.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            document.getElementById("entEr").click();
+        }
+    })
+
+    function saveData() {
+    localStorage.setItem("red", d1.value)
+    localStorage.setItem("blue", d2.value);
+    localStorage.setItem("yellow", d3.value);
+    localStorage.setItem("black", d4.value);
+    localStorage.setItem("Acetic Acid", c1.value);
+    localStorage.setItem("Albaflow", c2.value);
+    localStorage.setItem("Eriopon Lan", c3.value);
+    localStorage.setItem("Formic Acid", c4.value);
+    localStorage.setItem("Hydrogen Peroxide", c5.value);
+    localStorage.setItem("Miralan LTD", c6.value);
+    localStorage.setItem("Miralan TOP", c7.value);
+    localStorage.setItem("Soda Ash", c8.value);
+    localStorage.setItem("Sodium Acetate", c9.value);
+    localStorage.setItem("Sodium Sulfate", c10.value);
+    localStorage.setItem("Ultravon CN", c11.value);
+    };
+    </script>
+</body>
+</html>
+
