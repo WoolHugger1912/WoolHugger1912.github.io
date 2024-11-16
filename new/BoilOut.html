@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Boil Out</title>
+</head>
+<body>
+    <form action="mathInven.html" method="get">
+        <caption>What Machine?</caption>
+        <p><input type="radio" name="tyPe" id="13"><label for="13">13</label></p>
+        <p><input type="radio" name="tyPe" id="10"><label for="10">10</label></p>
+        <p><input type="radio" name="tyPe" id="891112"><label for="891112">8, 9, 11, 12</label></p>
+        <p><input type="radio" name="tyPe" id="6"><label for="6">6</label></p>
+        <p><input type="radio" name="tyPe" id="5"><label for="5">5</label></p>
+        <p><input type="radio" name="tyPe" id="34"><label for="34">3, 4</label></p>
+        <p><input type="radio" name="tyPe" id="lB"><label for="lB">Large Beck</label></p>
+        <p><input type="radio" name="tyPe" id="sB"><label for="sB">Small Beck</label></p>
+        <br>
+        <br>
+        <caption>How many?</caption>
+        <p><input id="boiloutQuan" type="number"></p>
+    </form>
+<button onclick="boilouts()">Submit</button>
+<script>
+
+document.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            document.getElementById("entEr").click();
+        }
+    });
+
+    function boilouts() {
+    var acLS = localStorage.getItem("Acetic Acid");
+    var afLS = localStorage.getItem("Albaflow");
+    var hpLS = localStorage.getItem("Hydrogen Peroxide");
+    var saLS = localStorage.getItem("Soda Ash");
+    var uvLS = localStorage.getItem("Ultravon CN");
+    var boQ = document.getElementById("boiloutQuan").value;
+
+    if (document.getElementById("13").checked) {
+            var c1 = acLS -= 0.2 * boQ;
+            var c13 = hpLS -= 0.3 * boQ;
+            var c18 = saLS -= 2 * boQ;
+            var c26 = uvLS -= .1 * boQ;
+
+            localStorage.setItem("Acetic Acid", c1);
+            localStorage.setItem("Hydrogen Peroxide", c13);
+            localStorage.setItem("Soda Ash", c18);
+            localStorage.setItem("Ultravon CN", c26);
+
+        } else if (document.getElementById("10").checked) {
+            window.alert("Error: Duplicate Formulas");
+
+        } else if (document.getElementById("891112").checked) {
+            var c1 = acLS -= 10 * boQ;
+            var c13 = hpLS -= 15 * boQ;
+            var c18 = saLS -= 75 * boQ;
+            var c26 = uvLS -= 5 * boQ;
+
+            localStorage.setItem("Acetic Acid", c1);
+            localStorage.setItem("Hydrogen Peroxide", c13);
+            localStorage.setItem("Soda Ash", c18);
+            localStorage.setItem("Ultravon CN", c26);
+
+        } else if (document.getElementById("6").checked) {
+            var c1 = acLS -= 1.5 * boQ;
+            var c2 = afLS -= 1 * boQ;
+            var c13 = hpLS -= 2.5 * boQ;
+            var c18 = saLS -= 12 * boQ;
+            var c26 = uvLS -= 1 * boQ;
+
+            localStorage.setItem("Acetic Acid", c1);
+            localStorage.setItem("Albaflow", c2);
+            localStorage.setItem("Hydrogen Peroxide", c13);
+            localStorage.setItem("Soda Ash", c18);
+            localStorage.setItem("Ultravon CN", c26);
+
+        } else if (document.getElementById("5").checked) {
+            var c1 = acLS -= 6 * boQ;
+            var c13 = hpLS -= 9 * boQ;
+            var c18 = saLS -= 45 * boQ;
+            var c26 = uvLS -= 3 * boQ;
+
+            localStorage.setItem("Acetic Acid", c1);
+            localStorage.setItem("Hydrogen Peroxide", c13);
+            localStorage.setItem("Soda Ash", c18);
+            localStorage.setItem("Ultravon CN", c26);
+
+        } else if (document.getElementById("34").checked) {
+            var c1 = acLS -= 4 * boQ;
+            var c13 = hpLS -= 6 * boQ;
+            var c18 = saLS -= 30 * boQ;
+            var c26 = uvLS -= 2 * boQ;
+
+            localStorage.setItem("Acetic Acid", c1);
+            localStorage.setItem("Hydrogen Peroxide", c13);
+            localStorage.setItem("Soda Ash", c18);
+            localStorage.setItem("Ultravon CN", c26);
+
+        } else if (document.getElementById("lB").checked) {
+            var c1 = acLS -= 12 * boQ;
+            var c13 = hpLS -= 18 * boQ;
+            var c18 = saLS -= 90 * boQ;
+            var c26 = uvLS -= 6 * boQ;
+
+            localStorage.setItem("Acetic Acid", c1);
+            localStorage.setItem("Hydrogen Peroxide", c13);
+            localStorage.setItem("Soda Ash", c18);
+            localStorage.setItem("Ultravon CN", c26);
+
+        } else if (document.getElementById("sB").checked) {
+            var c1 = acLS -= 8 * boQ;
+            var c13 = hpLS -= 12 * boQ;
+            var c18 = saLS -= 60 * boQ;
+            var c26 = uvLS -= 4 * boQ;
+
+            localStorage.setItem("Acetic Acid", c1);
+            localStorage.setItem("Hydrogen Peroxide", c13);
+            localStorage.setItem("Soda Ash", c18);
+            localStorage.setItem("Ultravon CN", c26);
+        };
+    };
+
+</script>
+</body>
+</html>

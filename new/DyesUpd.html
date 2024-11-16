@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Inventory Updater Temp</title>
+<style>
+.ban-ner {
+    text-align: center;
+}
+</style>
+</head>
+<body>
+<h1 class="ban-ner">Inventory</h1>
+    <form action="mathInven.html" method="get">
+    <caption>What Dye?</caption>
+    <p><input id="dyeName" list="dyes"></p>
+    <datalist id="dyes">
+        <option></option>
+    </datalist>
+    <br>
+    <br>
+    <caption>How much?</caption>
+    <p><input id="invLBS" type="number"></p>
+    <br>
+    <br>
+    <caption>Are we adding to, subtracting from, or replacing the total?</caption>
+    <p><input type="radio" name="changeby" id="adding"><label for="adding">Adding to</label></p>
+    <p><input type="radio" name="changeby" id="subtracting"><label for="subtracting">Subtracting from</label></p>
+    <p><input type="radio" name="changeby" id="replacing"><label for="replacing">Replacing</label></p>
+    <br>
+    <br>
+    <caption>How much Red?</caption>
+    <div name="red"><input id="formRed" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Bezaktiv Blue?</caption>
+    <div name="blue"><input id="formbvBlue" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Lanaset Blue 5G?</caption>
+    <div name="blue"><input id="formltBlue" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Bezaktiv Yellow?</caption>
+    <div name="yellow"><input id="formbvYellow" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Lanaset Yellow 4GN?</caption>
+    <div name="yellow"><input id="formltYellow" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Black?</caption>
+    <div name="black"><input id="formBlack" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Acetic Acid?</caption>
+    <div name="Acetic Acid"><input id="formAA" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Albaflow SF Plus?</caption>
+    <div name="Albaflow"><input id="formASP" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Eriopon Lan?</caption>
+    <div name="Eriopon Lan"><input id="formEL" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Formic Acid?</caption>
+    <div name="Formic Acid"><input id="formFA" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Hydrogen Peroxide?</caption>
+    <div name="Hydrogen Peroxide"><input id="formHP" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Miralan LTD?</caption>
+    <div name="Miralan LTD"><input id="formML" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Miralan TOP?</caption>
+    <div name="Miralan TOP"><input id="formMT" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Sarabid Paw?</caption>
+    <div name="Sarabid Paw"><input id="formSP" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Sodium Acetate?</caption>
+    <div name="Sodium Acetate"><input id="formSAc" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Soda Ash?</caption>
+    <div name="Soda Ash"><input id="formSA" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Sodium Sulfate?</caption>
+    <div name="Sodium Sulfate"><input id="formSS" name="math" type="text"></div>
+    <br>
+    <br>
+    <caption>How much Ultravon CN?</caption>
+    <div name="Ultravon CN"><input id="formUC" name="math" type="text"></div>
+    <br>
+    <br>
+    <input id="entEr" type="button" onclick="saveData()" value="Submit">
+    </form>
+
+    <script>
+    
+    // localStorage.setItem('score', JSON.stringify(playx.innerHTML));
+    var d22 = document.getElementById("formRed");
+    var d6 = document.getElementById("formbvBlue");
+    var d15 = document.getElementById("formltBlue");
+    var d8 = document.getElementById("formbvYellow");
+    var d26 = document.getElementById("formltYellow");
+    var d5 = document.getElementById("formBlack");
+    var c1 = document.getElementById("formAA");
+    var c2 = document.getElementById("formASP");
+    var c10 = document.getElementById("formEL")
+    var c12 = document.getElementById("formFA");
+    var c13 = document.getElementById("formHP");
+    var c15 = document.getElementById("formML");
+    var c16 = document.getElementById("formMT");
+    var c17 = document.getElementById("formSP");
+    var c19 = document.getElementById("formSAc");
+    var c18 = document.getElementById("formSA");
+    var c22 = document.getElementById("formSS");
+    var c26 = document.getElementById("formUC");
+
+    document.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            document.getElementById("entEr").click();
+        }
+    })
+
+    function saveData() {
+    localStorage.setItem("Lanaset Red 2B", d23.value)
+    localStorage.setItem("Bezaktiv Blue", d43.value);
+    localStorage.setItem("Lanaset Blue 5G", d45.value);
+    localStorage.setItem("Bezaktiv Yellow", d2.value);
+    localStorage.setItem("Lanaset Yellow 4GN", d5.value);    
+    localStorage.setItem("Bezaktiv Black", d67.value);
+    localStorage.setItem("Acetic Acid", c1.value);
+    localStorage.setItem("Albaflow", c2.value);
+    localStorage.setItem("Eriopon Lan", c10.value);
+    localStorage.setItem("Formic Acid", c12.value);
+    localStorage.setItem("Hydrogen Peroxide", c13.value);
+    localStorage.setItem("Miralan LTD", c15.value);
+    localStorage.setItem("Miralan TOP", c16.value);
+    localStorage.setItem("Sarabid Paw", c17.value);
+    localStorage.setItem("Sodium Acetate", c19.value); 
+    localStorage.setItem("Soda Ash", c18.value);
+    localStorage.setItem("Sodium Sulfate", c22.value);
+    localStorage.setItem("Ultravon CN", c26.value);
+    };
+    </script>
+</body>
+</html>
+
