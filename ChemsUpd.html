@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Chemical Updater</title>
+<style>
+.ban-ner {
+    text-align: center;
+}
+
+.tab-leau, th, td {
+    margin: auto;
+    border: 1px solid;
+    width: 50%;
+}
+
+/*
+datalist {
+    color: #ff00ff;
+    max-height: 1px;
+    width: 1px;
+    overflow: scroll;
+    background-color: #ff00ff;
+}
+*/
+.chem-name, option {
+    width: 175px;
+    scroll-behavior: smooth;
+}
+
+</style>
+</head>
+<body>
+<h1 class="ban-ner">Update Chemicals</h1>
+<div id="tst" style="display: none;">
+  <table class="tab-leau">
+    <tb>
+        <td id="naME"></td>
+        <td id="weiGHT"></td>
+    </tb>
+  </table>
+</div>
+  <br>
+    <form action="mathInven.html" method="get">
+    <caption>Which Chemical?</caption>
+<!-- <input id="chemName" list="chems"> -->
+    <p><div class="chem-name"><select id="chems" onfocus="this.size=10;" onblur="this.size=1;" onchange="this.size=1; this.blur();">
+        <option value="nada" selected="true" disabled>Pick a Chemical...</option>
+        <option value="Acetic Acid">Acetic Acid</option>
+        <option value="Albaflow SF Plus">Albaflow SF Plus</option>
+        <option value="Albafluid SL Conc">Albafluid SL Conc</option>
+        <option value="Albegal A">Albegal A</option>
+        <option value="Albegal E3-B">Albegal E3-B</option>
+        <option value="Albegal Set">Albegal Set</option>
+        <option value="Clarite Bac">Clarite Bac</option>
+        <option value="Color Clear">Color Clear</option>
+        <option value="Eriopon E3-Save">Eriopon E3-Save</option>
+        <option value="Eriopon Lan">Eriopon Lan</option>
+        <option value="Formic Acid">Formic Acid</option>
+        <option value="Hydrogen Peroxide">Hydrogen Peroxide</option>
+        <option value="Hydroxylamine Sulfate">Hydroxylamine Sulfate</option>
+        <option value="Miralan LTD">Miralan LTD</option>
+        <option value="Miralan Top">Miralan Top</option>
+        <option value="Sarabid Paw">Sarabid Paw</option>
+        <option value="Soda Ash">Soda Ash</option>
+        <option value="Sodium Acetate">Sodium Acetate</option>
+        <option value="Sodium Bicarbonate">Sodium Bicarbonate</option>
+        <option value="Sodium Metabisulfate">Sodium Metabisulfate</option>
+        <option value="Sodium Sulfate">Sodium Sulfate</option>
+        <option value="Solopol DE3">Solopol DE3</option>
+        <option value="Thiourea-Dioxide">Thiourea-Dioxide</option>
+        <option value="Tinegal NT">Tinegal NT</option>
+        <option value="Ultravon CN">Ultravon CN</option>
+        <option value="Univadine DPL">Univadine DPL</option>
+        <option value="Univadine DFM">Univadine DFM</option>
+        <option value="UV Fast PLF">UV Fast PLF</option>
+        <option value="UV Fast W. Liq.">UV Fast W. Liq.</option>        
+    </select></div></p>
+    <br>
+    <br>
+    <caption>How much?</caption>
+    <p><input id="invLBS" type="number" min="0"></p>
+    <br>
+    <br>
+    <caption>Are we adding to, subtracting from, or replacing the total?</caption>
+    <p><input type="radio" name="changeby" id="adding"><label for="adding">Adding to</label></p>
+    <p><input type="radio" name="changeby" id="subtracting"><label for="subtracting">Subtracting from</label></p>
+    <p><input type="radio" name="changeby" id="replacing"><label for="replacing">Replacing</label></p>
+    <br>
+    <br>
+    <input id="entEr" type="button" onclick="updaTION()" value="Submit">
+    </form>
+
+    <script>
+
+    document.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            document.getElementById("entEr").click();
+        }
+    })
+
+    document.getElementById("chems").onchange = function() {
+        var w = document.getElementById("chems").value;
+        var x = document.getElementById("tst");
+        var y = document.getElementById("naME");
+        var z = document.getElementById("weiGHT");
+
+        y.innerHTML = w;
+        z.innerHTML = Math.max(0, localStorage.getItem(w));
+
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        };
+    };
+
+    function updaTION() {
+        var cN = document.getElementById("chems").value;
+        var iP = parseInt(document.getElementById("invLBS").value);
+        var rLS = parseInt(localStorage.getItem(cN));
+        var lB = document.getElementById("weiGHT")
+
+        if (document.getElementById("adding").checked) {
+        var cU = rLS + iP;
+
+        localStorage.setItem(cN, cU);
+        } else if (document.getElementById("subtracting").checked) {
+            var cU = rLS - iP;
+
+            localStorage.setItem(cN, cU);
+        } else if (document.getElementById("replacing").checked) {
+            var cU = iP;
+
+            localStorage.setItem(cN, cU);
+        };
+
+    lB.innerHTML = Math.max(0, localStorage.getItem(cN));
+
+    };
+    </script>
+</body>
+</html>
+

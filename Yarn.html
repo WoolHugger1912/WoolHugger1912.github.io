@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Yarn</title>
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    .wrapper {
+        width:200px;
+    }
+
+    .customer {
+        width:75px;
+    }
+</style>
+</head>
+<body>
+<h1>Stock Dips</h1>
+    <form action="mathInven.html" method="get">
+    <caption>What Color?</caption>
+    <input id="dipColor" list="dyeNumbers">
+    <datalist id="dyeNumbers">
+        <option value="193 Navy"></option>
+        <option value="194 Gold"></option>
+        <option value="195 Brown"></option>
+        <option value="196 Brown"></option>
+        <option value="197 Tan"></option>
+        <option value="199 Wine"></option>
+        <option value="201 Rust"></option>
+        <option value="202 Brown"></option>
+        <option value="204 Slate"></option>
+        <option value="205 Brown"></option>
+    </datalist>
+    <br>
+    <br>
+    <caption>What Wool type?</caption>
+    <input id="dipWool" list="woolTypes">
+    <datalist id="woolTypes">
+        <option value="80A">80A-004</option>
+        <option value="36E">36E-004</option>
+        <option value="36B">36B-001</option>
+        <option value="48E">C9</option>
+        <option value="22G">22G-001</option>
+        <option value="72B">72B-002</option>
+        <option value="TE7">TE7-001</option>
+        <option value="PE5">PE5-001</option>
+    </datalist>
+    <br>
+    <br>
+    <caption>How many?</caption>
+    <p><input id="dipQuan" type="number"></p>
+    <br>
+    <br>
+    <caption>What's the weight?</caption>
+    <p><input id="cuStom" type="number"></p>
+    <br>
+    <br>
+    <!-- Need datalist under id dipWool with wool options, check redundancies between different wool formulas -->
+    <input id="entEr" type="button" onclick="canRead()" value="Submit">
+    </form>
+
+    <script>
+        // canRead(); saveData(); redTest(); 
+    
+    // localStorage.setItem('score', JSON.stringify(playx.innerHTML));
+
+    document.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            document.getElementById("entEr").click();
+        }
+    });
+
+    function multIf() {
+        var dpC = document.getElementById("dipColor").value;
+        var dpW = document.getElementById("dipWool").value;
+
+        if (dpC === "102 Black" && (dpW === "Y2" || dpW === "Y7" || dpW === "G8")) {
+            window.alert("Howdy");
+        };
+    };
+
+    function canRead() {
+        //var ltrgLS = localStorage.getItem("Lanaset Red G");
+        //var llboceLS = localStorage.getItem("Lanasol Bordeaux CE");
+        //var ltbobLS =localStorage.getItem("Lanaset Bordeaux B");        
+        //var llbceLS = localStorage.getItem("Lanasol Blue CE");
+        //var llgyLS = localStorage.getItem("Lanasol Golden Yellow CE-01");
+        //var lty2r = localStorage.getItem("Lanaset Yellow 2R");
+        //var ltgrygLS = localStorage.getItem("Lanaset Grey G");
+        var afLS = localStorage.getItem("Albaflow SF Plus");
+        var spLS = localStorage.getItem("Sarabid Paw");
+        var agsLS = localStorage.getItem("Albegal Set");
+        var faLS = localStorage.getItem("Formic Acid");
+        var aaLS = localStorage.getItem("Acetic Acid");
+        var saLS = localStorage.getItem("Soda Ash");
+        var smaLS = localStorage.getItem("Sodium Acetate");
+        var smsLS = localStorage.getItem("Sodium Sulfate");
+        var elLS = localStorage.getItem("Eriopon Lan");
+        var ucnLS = localStorage.getItem("Ultravon CN");
+        var dpQ = document.getElementById("dipQuan").value;
+        var dpC = document.getElementById("dipColor").value;
+        var dpW = document.getElementById("dipWool").value;
+        var w = document.getElementById("cuStom").value;
+
+        if (document.getElementById("dipQuan").value == "") {
+            alert("Please enter how many!");
+        };
+        
+
+        // Chemical Math:
+
+        if (dpC === "199 Wine") { 
+            if (dpW === "TE7") {
+            var c2 = afLS -= (w * 0.01) * dpQ;
+            var c19 = smaLS -= (w * 0.06) * dpQ;
+            var c12 = ucnLS -= (w * 0.02) * dpQ;
+            var c22 = smsLS -= (w * 0.05) * dpW;
+            var c17 = spLS -= (w * 0.015) * dpW;
+            var c6 =  agsLS -= (w * 0.005) * dpW;
+            var c1 = aaLS -= (w * 0.04) * dpW;
+            var c18 = saLS -= (w * 0.03) * dpQ;
+            var c10 = elLS -= (w * 0.02) * dpQ;
+            var c12 = faLS -= (w * 0.005) * dpQ;
+
+            localStorage.setItem("Albaflow SF Plus", c2);
+            localStorage.setItem("Sodium Acetate", c19);
+            localStorage.setItem("Ultravon CN", c12);
+            localStorage.setItem("Sodium Sulfate", c22);
+            localStorage.setItem("Sarabid Paw", c17);
+            localStorage.setItem("Albegal Set", c6);
+            localStorage.setItem("Acetic Acid", c1);
+            localStorage.setItem("Soda Ash", c18);
+            localStorage.setItem("Eriopon Lan", c10);
+            localStorage.setItem("Formic Acid", c12);
+
+            } else if (dpW === "PE5") {
+            var c22 = smsLS -= (w * 0.1) * dpW;
+            var c6 =  agsLS -= (w * 0.01) * dpW;
+            var c19 = smaLS -= (w * 0.02) * dpQ;
+            var c2 = afLS -= (w * 0.005) * dpQ;
+
+            
+            localStorage.setItem("Sodium Sulfate", c22);
+            localStorage.setItem("Albegal Set", c6);                        
+            localStorage.setItem("Sodium Acetate", c19);
+            localStorage.setItem("Albaflow SF Plus", c2);
+            };
+        };
+
+        if (dpC === "202 Brown" && (dpW === "80A" || dpW === "48E")) {
+                var c19 = smaLS -= (w * 0.06) * dpQ;
+                var c2 = afLS -= (w * 0.01) * dpQ;
+                var c12 = ucnLS -= (w * 0.02) * dpQ;
+                var c22 = smsLS -= (w * 0.1) * dpW;
+                var c6 =  agsLS -= (w * 0.01) * dpW;
+                var c1 = aaLS -= (w * 0.04) * dpW;
+
+                localStorage.setItem("Albaflow SF Plus", c2);
+                localStorage.setItem("Sodium Acetate", c19);
+                localStorage.setItem("Ultravon CN", c12);
+                localStorage.setItem("Sodium Sulfate", c22);
+                localStorage.setItem("Sarabid Paw", c17);
+                localStorage.setItem("Albegal Set", c6);
+                localStorage.setItem("Acetic Acid", c1);
+        };
+
+        // Dyes Math:
+
+        if (dpC === "199 Wine") { 
+            if (dpW === "TE7") {
+                var d6 = llgyLS -= (w * 0.001) * dpQ;
+                var d27 = llrceLS -= (w * 0.006) * dpQ;
+                var d69 = llblLS -= (w * 0.045) * dpQ;
+
+                localStorage.setItem("Lanasol Golden Yellow CE-01", d6);
+                localStorage.setItem("Lanasol Red CE", d27);
+                localStorage.setItem("Lanasol Black CE", d69);
+
+            } else if (dpW === "PE5") {
+                var d4 = lty2rLS -= (w * 0.009) * dpQ;
+                var d24 = ltbobLS -= (w * 0.0393) * dpQ;
+                var d41 = ltgrygLS -= (w * 0.03) * dpQ;
+
+                localStorage.setItem("Lanaset Yellow 2R", d4);
+                localStorage.setItem("Lanaset Bordeaux B", d24);
+                localStorage.setItem("Lanaset Grey G", d41);
+            };
+        };
+        
+
+        
+        if (dpC === "069 Gold" && dpW === "Y2") {
+            var c2 = afLS -= (w * 0.0025) * dpQ;
+            var c16 = mtLS -= (w * 0.015) * dpQ;
+            var c12 = faLS -= (w * 0.01) * dpQ;
+            var d5 = lty4gnLS -= (w * 0.0338) * dpQ;
+            var d23 = ltr2bLS -= (w * 0.00222) * dpQ;
+            var d45 = ltb5gLS -= (w * 0.0005) * dpQ;
+
+            localStorage.setItem("Albaflow", c2);
+            localStorage.setItem("Miralan TOP", c16);
+            localStorage.setItem("Formic Acid", c12);
+            localStorage.setItem("Lanaset Yellow 4GN", d5);
+            localStorage.setItem("Lanaset Red 2B", d23);
+            localStorage.setItem("Lanaset Blue 5G", d45);
+        };
+    };
+    </script>
+</body>
+</html>
+
