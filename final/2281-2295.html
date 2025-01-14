@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Piece: 2211 - 2240</title>
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    .wrapper {
+        width:200px;
+    }
+
+    .customer {
+        width:75px;
+    }
+</style>
+</head>
+<body>
+<h1>Piece Dips</h1>
+    <form action="mathInven.html" method="get">
+    <caption>What Color?</caption>
+    <input id="dipColor" list="dyeNumbers">
+    <datalist id="dyeNumbers">
+        <option value="2293-8030 Aubergine"></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+    </datalist>
+    <br>
+    <br>
+    <caption>How many?</caption>
+    <p><input id="dipQuan" type="number" max="4"></p>
+    <br>
+    <br>
+    <caption>What's the weight?</caption>
+    <p><input id="cuStom" type="number"></p>
+    <p id="altW"><input id="cusTom" type="number"></p>
+    <br>
+    <br>
+    <!-- Need datalist under id dipWool with wool options, check redundancies between different wool formulas -->
+    <input id="entEr" type="button" onclick="canRead()" value="Submit">
+    </form>
+
+    <script>
+        // canRead(); saveData(); redTest(); 
+    
+    // localStorage.setItem('score', JSON.stringify(playx.innerHTML));
+
+
+    // Special circumstance for two same color types, include or enter twice?
+    document.getElementById("altW").style.display = "none";
+
+    document.getElementById("dipQuan").addEventListener('input', (event) => {
+        const value = Number(event.target.value);
+
+        if (value === 2) {
+            document.getElementById("altW").style.display = "block";
+        } else {
+            document.getElementById("altW").style.display = "none";
+        };
+    })
+
+    document.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            document.getElementById("entEr").click();
+        }
+    });
+
+    function multIf() {
+        var dpC = document.getElementById("dipColor").value;
+        var dpW = document.getElementById("dipWool").value;
+
+        if (dpC === "102 Black" && (dpW === "Y2" || dpW === "Y7" || dpW === "G8")) {
+            window.alert("Howdy");
+        };
+    };
+
+    function canRead() {
+
+        var afLS = localStorage.getItem("Albaflow SF Plus");
+        var afscLS = localStorage.getItem("Albafluid SL Conc");
+        var agaLS = localStorage.getItem("Albegal A");
+        var aaLS = localStorage.getItem("Acetic Acid");
+        var smsLS = localStorage.getItem("Sodium Sulfate");
+        var tnLS = localStorage.getItem("Tinegal NT");
+        var ufpLS = localStorage.getItem("UV Fast PLF");
+        var tlyLS = localStorage.getItem("Terasil Yellow CR");
+        var tlr3blLS = localStorage.getItem("Terasil Red 3BL.01 150%");
+        var tlb3rlLS = localStorage.getItem("Terasil Blue 3RL-02 150%");
+        var dlglLS = localStorage.getItem("Doracryl Golden Yellow XGFLS 200");
+        var mnrLS = localStorage.getItem("Maxilon Red GRL 200%");
+        var mnbLS = localStorage.getItem("Maxilon Blue SL 200%");
+        var dpQ = document.getElementById("dipQuan").value;
+        var dpC = document.getElementById("dipColor").value;
+        var w = document.getElementById("cuStom").value;
+        var wD = document.getElementById("cusTom").value;
+
+        if (document.getElementById("dipQuan").value == "") {
+            alert("Please enter how many!");
+        };
+        
+
+        // Chemical Math:
+
+        if (dpC === "2293-8030 Aubergine") { 
+            var c1 = aaLS -= (w * 0.01) * dpQ; 
+            var c22 = smsLS -= (w * 0.1) * dpQ;
+            var c4 = agaLS -= (w * 0.005) * dpQ;
+            var c25 = tnLS -= (w * 0.0125) * dpQ;
+            var c3 = afscLS -= (w * 0.03) * dpQ;
+            var c2 = afLS -= (w * 0.015) * dpQ;
+            var c29 = ufpLS -= (w * 0.03) * dpQ;
+
+            localStorage.setItem("Acetic Acid", c1);
+            localStorage.setItem("Sodium Sulfate", c22);
+            localStorage.setItem("Albegal A", c4);
+            localStorage.setItem("Tinegal NT", c25);
+            localStorage.setItem("Albafluid SL Conc", c3);
+            localStorage.setItem("Albaflow SF Plus", c2);
+            localStorage.setItem("UV Fast PLF", c29);
+        };
+
+        // Dyes Math:
+
+        if (dpC === "2293-8030 Aubergine") { 
+            var d11 = tlyLS -= (w * 0.000009) * dpQ;
+            var d35 = tlr3blLS -= (w * 0.00085) * dpQ;
+            var d55 = tlb3rlLS -= (w * 0.0013) * dpQ;
+            var d3 = dlglLS -= (w * 0.0007) * dpQ;
+            var d30 = mnrLS -= (w * 0.0021) * dpQ;
+            var d50 = mnbLS -= (w * 0.00074) * dpQ;
+
+            localStorage.setItem("Terasil Yellow CR", d11);
+            localStorage.setItem("Terasil Red 3BL.01 150%", d35);
+            localStorage.setItem("Terasil Blue 3RL-02 150%", d55);
+            localStorage.setItem("Doracryl Golden Yellow XGFLS 200", d3);
+            localStorage.setItem("Maxilon Red GRL 200%", d30);
+            localStorage.setItem("Maxilon Blue SL 200%", d50);
+        };
+    };    
+    </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Button</title>
+    <style>
+       /* .the-btn {
+        height: 250px;
+        width: 250px;
+        background-color: red;
+        border-radius: 50%;
+        }
+
+        .cont {
+        margin: auto;
+        } */
+
+        .the-btn {
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        width: 200px;
+        height: 200px;
+        margin: -100px;
+        position: absolute;
+        background-color: #ff0000;
+        font-size: 45px;
+        box-shadow: 0 9px #696969;
+        }
+
+        .the-btn:active {
+        background-color: #f00000;
+        box-shadow: 0 5px #424204;
+        transform: translateY(5px);
+        }
+    </style>
+</head>
+<body>
+<div class="cont">
+<input class="the-btn" type="button" onclick="updInv();" value="Re-Stock">
+</div>
+<script>
+    function updInv() {
+ localStorage.setItem("Acetic Acid", 2000);
+ localStorage.setItem("Albaflow SF Plus", 2000);
+ localStorage.setItem("Albafluid SL Conc", 2000);
+ localStorage.setItem("Albegal A", 2000);
+ localStorage.setItem("Albegal E3-B", 2000);
+ localStorage.setItem("Albegal Set", 2000);
+ localStorage.setItem("Clarite Bac", 2000);
+ localStorage.setItem("Color Clear", 2000);
+ localStorage.setItem("Eriopon E3-Save", 2000);
+ localStorage.setItem("Eriopon Lan", 2000);
+ localStorage.setItem("Formic Acid", 2000);
+ localStorage.setItem("Hydrogen Peroxide", 2000);
+ localStorage.setItem("Hydroxylamine Sulfate", 2000);
+ localStorage.setItem("Miralan LTD", 2000);
+ localStorage.setItem("Miralan TOP", 2000);
+ localStorage.setItem("Sarabid Paw", 2000);
+ localStorage.setItem("Soda Ash", 2000);
+ localStorage.setItem("Sodium Acetate", 2000);
+ localStorage.setItem("Sodium Bicarbonate", 2000);
+ localStorage.setItem("Sodium Metabisulfate", 2000);
+ localStorage.setItem("Sodium Sulfate", 2000);
+ localStorage.setItem("Solopol DE3", 2000);
+ localStorage.setItem("Thiourea-Dioxide", 2000);
+ localStorage.setItem("Tinegal NT", 2000);
+ localStorage.setItem("Ultravon CN", 2000);
+ localStorage.setItem("Univadine DPL", 2000);
+ localStorage.setItem("Univadine DFM", 2000);
+ localStorage.setItem("UV Fast PLF", 2000);
+ localStorage.setItem("UV Fast W. Liq.", 2000);
+
+localStorage.setItem("Bemaplex Yellow M-T", 2000);
+localStorage.setItem("Bezaktiv Yellow WO-4R", 2000);
+localStorage.setItem("Doracryl Golden Yellow XGFLS 2000", 2000);
+localStorage.setItem("Lanaset Yellow 2R", 2000);
+localStorage.setItem("Lanaset Yellow 4GN", 2000);
+localStorage.setItem("Lanasol Golden Yellow CE-01", 2000);
+localStorage.setItem("Lanasol Yellow 4G", 2000);
+localStorage.setItem("Tectilon Yellow 2G 2000%", 2000);
+localStorage.setItem("Tectilon Yellow 3R 2000%", 2000);
+localStorage.setItem("Telon Yellow 4R Micro 01", 2000);
+localStorage.setItem("Terasil Yellow CR", 2000);
+localStorage.setItem("Teratop Yellow BRLF", 2000);
+localStorage.setItem("Teratop/Terasil 3R 2000%", 2000);
+localStorage.setItem("Lanaset Orange RN", 2000);
+localStorage.setItem("Telon Orange M-GSN 01", 2000);
+localStorage.setItem("Terasil Orange TC-01", 2000);
+localStorage.setItem("Terasil Orange 4RL", 2000);
+localStorage.setItem("Bezaktiv Red WO-BB", 2000);
+localStorage.setItem("Bemaplex Red M-T", 2000);
+localStorage.setItem("Bemacid Red F-4B", 2000);
+localStorage.setItem("Dorasyn Red C-2B", 2000);
+localStorage.setItem("Erionyl Red B-10B", 2000);
+localStorage.setItem("Lanaset Red 2B", 2000);
+localStorage.setItem("Lanaset Bordeaux B", 2000);
+localStorage.setItem("Lanasol Bordeaux CE", 2000);
+localStorage.setItem("Lanasol Red 6G", 2000);
+localStorage.setItem("Lanasol Red CE", 2000);
+localStorage.setItem("Lanaset Red G", 2000);
+localStorage.setItem("Lanasyn Scarlet F-3GL 130%", 2000);
+localStorage.setItem("Maxilon Red GRL 2000%", 2000);
+localStorage.setItem("Optilan Scarlet MF-GF 130", 2000);
+localStorage.setItem("Tectilon Red 2B", 2000);
+localStorage.setItem("Telon Red A-FG", 2000);
+localStorage.setItem("Telon Rhodamine", 2000);
+localStorage.setItem("Terasil Red 3BL.01 150%", 2000);
+localStorage.setItem("Terasil Red CB", 2000);
+localStorage.setItem("Terasil Red R", 2000);
+localStorage.setItem("Teratop Pink 2GLA", 2000);
+localStorage.setItem("Lanaset Violet B", 2000);
+localStorage.setItem("Telon Violet M-RWN 01", 2000);
+localStorage.setItem("Lanaset Grey G", 2000);
+localStorage.setItem("Doracid Blue SBL", 2000);
+localStorage.setItem("Bezaktiv Blue WO-DB", 2000);
+localStorage.setItem("Lanaset Blue 2RA", 2000);
+localStorage.setItem("Lanaset Blue 5G", 2000);
+localStorage.setItem("Lanasol Blue 3G", 2000);
+localStorage.setItem("Lanasol Blue 3R", 2000);
+localStorage.setItem("Lanasol Blue 8G 01 150%", 2000);
+localStorage.setItem("Lanasol Blue CE", 2000);
+localStorage.setItem("Maxilon Blue SL 2000%", 2000);
+localStorage.setItem("Tectilon Blue 4RS KWL 2000%", 2000);
+localStorage.setItem("Tectilon Blue 6G 2000%", 2000);
+localStorage.setItem("Telon Blue M-GL W", 2000);
+localStorage.setItem("Telon Blue RR", 2000);
+localStorage.setItem("Terasil Blue 3RL-02 150%", 2000);
+localStorage.setItem("Terasil/Teratop Blue GLF", 2000);
+localStorage.setItem("Terasil Blue RBS", 2000);
+localStorage.setItem("Teratop Blue BGE", 2000);
+localStorage.setItem("Teratop Blue BLF", 2000);
+localStorage.setItem("Bemaplex Navy M-T", 2000);
+localStorage.setItem("Lanasyn Navy CF-R", 2000);
+localStorage.setItem("Lanasol Navy CE", 2000);
+localStorage.setItem("Lanaset Green B", 2000);
+localStorage.setItem("Bemaplex Brown D-BD", 2000);
+localStorage.setItem("Lanaset Brown B-NA", 2000);
+localStorage.setItem("Lanaset Brown G-01", 2000);
+localStorage.setItem("Bezaktiv Black WO-TF", 2000);
+localStorage.setItem("Isolan Black 2S-LD", 2000);
+localStorage.setItem("Lanasol Black CE", 2000);
+localStorage.setItem("Lanasol Deep Black CE-R", 2000);
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Standard Inventory</title>
+<style>
+table, th, td {
+  border: 1px solid;
+}
+
+table {
+  width: 100%;
+}
+
+.tyPe td {
+  text-align: center;
+  font-weight: bold;
+  height: 30px;
+}
+
+td {
+  width: 200px;
+}
+
+tr {
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<form action="mathInven.html" method="get">
+<table id="tableId">
+  <th>Name</th>
+  <th>Total (Weigh Area & Storage)</th>
+<tb>
+  <tr class="tyPe">
+    <td colspan="2">Chemicals</td>
+  </tr>
+  <tr>
+    <td>Acetic Acid</td>
+    <td id="aceAcid"></td>
+  </tr>
+  <tr>
+    <td>Albaflow SF Plus</td>
+    <td id="albaSPlus"></td>
+  </tr>
+  <tr>
+    <td>Albafluid SL Conc</td>
+    <td id="albaSConc"></td>
+  </tr>
+  <tr>
+    <td>Albegal A</td>
+    <td id="albeA"></td>
+  </tr>
+  <tr>
+    <td>Albegal E3-B</td>
+    <td id="albeE3B"></td>
+  </tr>
+  <tr>
+    <td>Albegal Set</td>
+    <td id="albeSet"></td>
+  </tr>
+  <tr>
+    <td>Clarite Bac</td>
+    <td id="clariBac"></td>
+  </tr>
+  <tr>
+    <td>Color Clear</td>
+    <td id="colCle"></td>
+  </tr>
+  <tr>
+    <td>Eriopon E3-Save</td>
+    <td id="eriE3S"></td>
+  </tr>
+  <tr>
+   <td>Eriopon Lan</td>
+   <td id="eriLan"></td>
+  </tr>
+  <tr>
+   <td>Formic Acid</td>
+   <td id="formAcid"></td>
+  </tr>
+  <tr>
+   <td>Hydrogen Peroxide</td>
+   <td id="hydroPero"></td>
+  </tr>
+  <tr>
+    <td>Hydroxylamine Sulfate</td>
+    <td id="hydroSulf"></td>
+  </tr>
+  <tr>
+   <td>Miralan LTD</td>
+   <td id="miraLTD"></td>
+  </tr>
+  <tr>
+    <td>Miralan Top</td>
+    <td id="miraTOP"></td>
+  </tr>
+  <tr>
+    <td>Sarabid Paw</td>
+    <td id="saraPaw"></td>
+  </tr>
+  <tr>
+    <td>Soda Ash</td>
+    <td id="sodAsh"></td>
+  </tr>
+  <tr>
+    <td>Sodium Acetate</td>
+    <td id="sodAce"></td>
+  </tr>
+  <tr>
+    <td>Sodium Bicarbonate</td>
+    <td id="sodBi"></td>
+  </tr>
+  <tr>
+    <td>Sodium Metabisulfate</td>
+    <td id="sodMeta"></td>
+  </tr>
+  <tr>
+    <td>Sodium Sulfate</td>
+    <td id="sodSulf"></td>
+  </tr>
+  <tr>
+    <td>Solopol DE3</td>
+    <td id="soloDE3"></td>
+  </tr>
+  <tr>
+    <td>Thiourea-Dioxide</td>
+    <td id="thiDio"></td>
+  </tr>
+  <tr>
+    <td>Tinegal NT</td>
+    <td id="tinNT"></td>
+  </tr>
+  <tr>
+    <td>Ultravon CN</td>
+    <td id="ultraCN"></td>
+  </tr>
+  <tr>
+    <td>Univadine DPL</td>
+    <td id="uniDPL"></td>
+  </tr>
+  <tr>
+    <td>Univadine DFM</td>
+    <td id="uniDFM"></td>
+  </tr>
+  <tr>
+    <td>UV Fast PLF</td>
+    <td id="uvfPLF"></td>
+  </tr>
+  <tr>
+    <td>UV Fast W. Liq.</td>
+    <td id="uvfWL"></td>
+  </tr>
+  
+  <tr class="tyPe">
+    <td colspan="2">Dyes</td>
+  </tr>
+ <tr>
+   <td>Bemaplex Yellow M-T</td>
+   <td id="bemaYelo"></td>
+ </tr>
+  <tr>
+  <td>Bezaktiv Yellow WO-4R</td>
+  <td id="bezYelo"></td>
+ </tr>
+ <tr>
+ <td>Doracryl Golden Yellow XGFLS 200</td>
+ <td id="doraYelo"></td>
+</tr>
+ <tr>
+  <td>Lanaset Yellow 2R</td>
+  <td id="lana2RYelo"></td>
+</tr>
+ <tr>
+   <td>Lanaset Yellow 4GN</td>
+   <td id="lana4GNYelo"></td>
+ </tr>
+ <tr>
+  <td>Lanasol Golden Yellow CE-01</td>
+  <td id="lanaCEYelo"></td>
+ </tr>
+ <tr>
+   <td>Lanasol Yellow 4G</td>
+   <td id="lana4GYelo"></td>
+ </tr>
+ <tr>
+  <td>Tectilon Yellow 2G 200%</td>
+  <td id="tect2GYelo"></td>
+ </tr>
+ <tr>
+  <td>Tectilon Yellow 3R 200%</td>
+  <td id="tect3RYelo"></td>
+ </tr>
+<tr>
+  <td>Telon Yellow 4R Micro 01</td>
+  <td id="telo4RYelo"></td>
+</tr>
+<tr>
+  <td>Terasil Yellow CR</td>
+  <td id="teraCRYelo"></td>
+</tr>
+<tr>
+ <td>Teratop Yellow BRLF</td>
+ <td id="teraBRLFYelo"></td>
+</tr>
+<tr>
+  <td>Teratop/Terasil Yellow GWL-01</td>
+  <td id="teraGWLYelo"></td>
+</tr>
+<tr>
+ <td>Lanaset Orange RN</td>
+ <td id="lanaRNOrng"></td>
+</tr>
+<tr>
+ <td>Telon Orange M-GSN 01</td>
+ <td id="teloMGSNOrng"></td>
+</tr>
+<tr>
+ <td>Terasil Orange TC-01</td>
+ <td id="teraTCOrng"></td>
+</tr>
+<tr>
+  <td>Terasil Orange 4RL</td>
+  <td id="tera4RLOrng"></td>
+</tr>
+<tr>
+ <td>Bezaktiv Red WO-BB</td>
+ <td id="bezRed"></td>
+</tr>
+<tr>
+  <td>Bemaplex Red M-T</td>
+  <td id="bemaMTRed"></td>
+</tr>
+<tr>
+ <td>Bemacid Red F-4B</td>
+ <td id="bemaF4BRed"></td>
+</tr>
+<tr>
+  <td>Dorasyn Red C-2B</td>
+  <td id="dorac2BRed"></td>
+</tr>
+<tr>
+ <td>Erionyl Red B-10B</td>
+ <td id="eriRed"></td>
+</tr>
+<tr>
+ <td>Lanaset Red 2B</td>
+ <td id="lana2BRed"></td>
+</tr>
+<tr>
+ <td>Lanaset Bordeaux B</td>
+ <td id="lanaBBord"></td>
+</tr>
+<tr>
+  <td>Lanasol Bordeaux CE</td>
+  <td id="lanaCEBord"></td>
+</tr>
+<tr>
+ <td>Lanasol Red 6G</td>
+ <td id="lana6GRed"></td>
+</tr>
+<tr>
+  <td>Lanasol Red CE</td>
+  <td id="lanaCERed"></td>
+</tr>
+<tr>
+ <td>Lanaset Red G</td>
+ <td id="lanaGRed"></td>
+</tr>
+<tr>
+  <td>Lanasyn Scarlet F-3GL 130%</td>
+  <td id="lanaF3GLScar"></td>
+</tr>
+<tr>
+ <td>Maxilon Red GRL 200%</td>
+ <td id="maxiRed"></td>
+</tr>
+<tr>
+ <td>Optilan Scarlet MF-GF 130</td>
+ <td id="optiScar"></td>
+</tr>
+<tr>
+ <td>Tectilon Red 2B 200%</td>
+ <td id="tect2BRed"></td>
+</tr>
+<tr>
+  <td>Telon Red A-FG</td>
+  <td id="teloRed"></td>
+</tr>
+<tr>
+ <td>Telon Rhodamine</td>
+ <td id="teloRhod"></td>
+</tr>
+<tr>
+  <td>Terasil Red 3BL.01 150%</td>
+  <td id="tera3BLRed"></td>
+</tr>
+<tr>
+ <td>Terasil Red CB</td>
+ <td id="teraCBRed"></td>
+</tr>
+<tr>
+  <td>Terasil Red R</td>
+  <td id="teraRRed"></td>
+</tr>
+<tr>
+ <td>Teratop Pink 2GLA</td>
+ <td id="teraPink"></td>
+</tr>
+<tr>
+ <td>Lanaset Violet B</td>
+ <td id="lanaViol"></td>
+</tr>
+<tr>
+ <td>Telon Violet M-RWN 01</td>
+ <td id="teloViol"></td>
+</tr>
+<tr>
+  <td>Lanaset Grey G</td>
+  <td id="lanaGrey"></td>
+</tr>
+<tr>
+ <td>Doracid Blue SBL</td>
+ <td id="doraBlue"></td>
+</tr>
+<tr>
+  <td>Bezaktiv Blue WO-DB</td>
+  <td id="bezBlue"></td>
+</tr>
+<tr>
+ <td>Lanaset Blue 2RA</td>
+ <td id="lana2RABlue"></td>
+</tr>
+<tr>
+  <td>Lanaset Blue 5G</td>
+  <td id="lana5GBlue"></td>
+</tr>
+<tr>
+ <td>Lanasol Blue 3G</td>
+ <td id="lana3GBlue"></td>
+</tr>
+<tr>
+ <td>Lanasol Blue 3R</td>
+ <td id="lana3RBlue"></td>
+</tr>
+<tr>
+ <td>Lanasol Blue 8G 01 150%</td>
+ <td id="lana8GBlue"></td>
+</tr>
+<tr>
+  <td>Lanasol Blue CE</td>
+  <td id="lanaCEBlue"></td>
+</tr>
+<tr>
+ <td>Maxilon Blue SL 200%</td>
+ <td id="maxiBlue"></td>
+</tr>
+<tr>
+  <td>Tectilon Blue 4RS KWL 200%</td>
+  <td id="tect4RSBlue"></td>
+</tr>
+<tr>
+ <td>Tectilon Blue 6G 200%</td>
+ <td id="tect6GBlue"></td>
+</tr>
+<tr>
+  <td>Telon Blue M-GL W</td>
+  <td id="teloMGLWBlue"></td>
+</tr>
+<tr>
+ <td>Telon Blue RR</td>
+ <td id="teloRRBlue"></td>
+</tr>
+<tr>
+ <td>Terasil Blue 3RL-02 150%</td>
+ <td id="tera3RLBlue"></td>
+</tr>
+<tr>
+ <td>Terasil/Teratop Blue GLF</td>
+ <td id="teraGLFBlue"></td>
+</tr>
+<tr>
+  <td>Terasil Blue RBS</td>
+  <td id="teraRBSBlue"></td>
+</tr>
+<tr>
+ <td>Teratop Blue BGE</td>
+ <td id="teraBGEBlue"></td>
+</tr>
+<tr>
+  <td>Teratop Blue BLF</td>
+  <td id="teraBLFBlue"></td>
+</tr>
+<tr>
+ <td>Bemaplex Navy M-T</td>
+ <td id="bemaNavy"></td>
+</tr>
+<tr>
+  <td>Lanasyn Navy CF-R</td>
+  <td id="lanaCFRNavy"></td>
+</tr>
+<tr>
+ <td>Lanasol Navy CE</td>
+ <td id="lanaCENavy"></td>
+</tr>
+<tr>
+ <td>Lanaset Green B</td>
+ <td id="lanaGreen"></td>
+</tr>
+<tr>
+ <td>Bemaplex Brown D-BD</td>
+ <td id="bemaBrown"></td>
+</tr>
+<tr>
+  <td>Lanaset Brown B-NA</td>
+  <td id="lanaBNABrown"></td>
+</tr>
+<tr>
+ <td>Lanaset Brown G-01</td>
+ <td id="lanaGBrown"></td>
+</tr>
+<tr>
+  <td>Bezaktiv Black WO-TF</td>
+  <td id="bezBlck"></td>
+</tr>
+<tr>
+  <td>Isolan Black 2S-LD</td>
+  <td id="isolBlck"></td>
+</tr>
+<tr>
+ <td>Lanasol Black CE</td>
+ <td id="lanaCEBlck"></td>
+</tr>
+<tr>
+  <td>Lanasol Deep Black CE-R</td>
+  <td id="lanaCEDpBlck"></td>
+ </tr>
+</tb>
+</table>
+</form>
+<br>
+<button id="exportButton">Export to Excel</button>
+
+<script src="StandardInvData.js"></script>
+</body>
+</html>

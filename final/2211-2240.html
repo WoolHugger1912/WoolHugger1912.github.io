@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Piece: 2211 - 2240</title>
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    .wrapper {
+        width:200px;
+    }
+
+    .customer {
+        width:75px;
+    }
+</style>
+</head>
+<body>
+<h1>Piece Dips</h1>
+    <form action="mathInven.html" method="get">
+    <caption>What Color?</caption>
+    <input id="dipColor" list="dyeNumbers">
+    <datalist id="dyeNumbers">
+        <option value="21630-8038 Red"></option>
+        <option value="2212-8038 Tangerine"></option>
+        <option value="2212-8040 Tangerine"></option>
+        <option value="2214-21630-8038 Citron"></option>
+        <option value="2231-21630-8038 Biege"></option>
+    </datalist>
+    <br>
+    <br>
+    <caption>How many?</caption>
+    <p><input id="dipQuan" type="number" max="4"></p>
+    <br>
+    <br>
+    <caption>What's the weight?</caption>
+    <p><input id="cuStom" type="number"></p>
+    <p id="altW"><input id="cusTom" type="number"></p>
+    <br>
+    <br>
+    <!-- Need datalist under id dipWool with wool options, check redundancies between different wool formulas -->
+    <input id="entEr" type="button" onclick="canRead()" value="Submit">
+    </form>
+
+    <script>
+        // canRead(); saveData(); redTest(); 
+    
+    // localStorage.setItem('score', JSON.stringify(playx.innerHTML));
+
+
+    // Special circumstance for two same color types, include or enter twice?
+    document.getElementById("altW").style.display = "none";
+
+    document.getElementById("dipQuan").addEventListener('input', (event) => {
+        const value = Number(event.target.value);
+
+        if (value === 2) {
+            document.getElementById("altW").style.display = "block";
+        } else {
+            document.getElementById("altW").style.display = "none";
+        };
+    })
+
+    document.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            document.getElementById("entEr").click();
+        }
+    });
+
+    function multIf() {
+        var dpC = document.getElementById("dipColor").value;
+        var dpW = document.getElementById("dipWool").value;
+
+        if (dpC === "102 Black" && (dpW === "Y2" || dpW === "Y7" || dpW === "G8")) {
+            window.alert("Howdy");
+        };
+    };
+
+    function canRead() {
+
+        var afLS = localStorage.getItem("Albaflow SF Plus");
+        var afscLS = localStorage.getItem("Albafluid SL Conc");
+        var agsLS = localStorage.getItem("Albegal Set");
+        var faLS = localStorage.getItem("Formic Acid");
+        var smsLS = localStorage.getItem("Sodium Sulfate");
+        var tcny3rLS = localStorage.getItem("Tectilon Yellow 3R 200%");
+        var tcnrLS = localStorage.getItem("Tectilon Red 2B");
+        var tcnb4rsLS = localStorage.getItem("Tectilon Blue 4RS KWL 200%");
+        var dpQ = document.getElementById("dipQuan").value;
+        var dpC = document.getElementById("dipColor").value;
+        var w = document.getElementById("cuStom").value;
+        var wD = document.getElementById("cusTom").value;
+
+        if (document.getElementById("dipQuan").value == "") {
+            alert("Please enter how many!");
+        };
+        
+
+        // Chemical Math:
+
+        if (dpC === "2212-8040 Tangerine") { 
+            var c22 = smsLS -= (w * 0.1) * dpQ;
+            var c6 = agsLS -= (w * 0.015) * dpQ;
+            var c2 = afLS -= (w * 0.01) * dpQ;
+            var c3 = afscLS -= (w * 0.02) * dpQ;
+            var c12 = faLS -= (w * 0.014) * dpQ;
+
+            localStorage.setItem("Sodium Sulfate", c22);
+            localStorage.setItem("Albegal Set", c6);
+            localStorage.setItem("Albaflow SF Plus", c2);
+            localStorage.setItem("Albafluid SL Conc", c3);
+            localStorage.setItem("Formic Acid", c12);
+        };
+
+        // Dyes Math:
+
+        if (dpC === "2212-8040 Tangerine") { 
+            var d9 = tcny3rLS -= (w * 0.0076) * dpQ;
+            var d32 = tcnrLS -= (w * 0.0039) * dpQ;
+            var d51 = tcnb4rsLS -= (w * 0.000078) * dpQ;
+
+            localStorage.setItem("Tectilon Yellow 3R 200%", d9);
+            localStorage.setItem("Tectilon Red 2B", d32);
+            localStorage.setItem("Tectilon Blue 4RS KWL 200%", d51);
+        };
+    };    
+    </script>
+</body>
+</html>
