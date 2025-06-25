@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Yarn: 868 - 902</title>
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    .wrapper {
+        width:200px;
+    }
+
+    .customer {
+        width:75px;
+    }
+</style>
+</head>
+<body>
+<h1>Yarn Dips</h1>
+    <form action="mathInven.html" method="get">
+    <caption>What Color?</caption>
+    <input id="dipColor" list="dyeNumbers">
+    <datalist id="dyeNumbers">
+        <option value="883 Green"></option>        
+        <option value="886 Gold"></option>
+    </datalist>
+    <br>
+    <br>
+    <caption>What Wool type?</caption>
+    <input id="dipWool" list="woolTypes">
+    <datalist id="woolTypes">
+        <option value="80A">80A-004</option>
+        <option value="36E">36E-004</option>
+        <option value="36B">36B-001</option>
+        <option value="48E">48E-004</option>
+        <option value="22G">22G-001</option>
+        <option value="72B">72B-002</option>
+        <option value="TE7">TE7-001</option>
+        <option value="PE5">PE5-001</option>
+    </datalist>
+    <br>
+    <br>
+    <caption>How many?</caption>
+    <p><input id="dipQuan" type="number" max="4"></p>
+    <br>
+    <br>
+    <caption>What's the weight?</caption>
+    <p><input id="cuStom" type="number"></p>
+    <p id="altW"><input id="cusTom" type="number"></p>
+    <br>
+    <br>
+    <caption>Is there a prescour?</caption>
+    <p><input type="radio" name="prscr" id="y"><label for="y">Yes</label></p>
+    <p><input type="radio" name="prscr" id="n"><label for="n">No</label></p>
+    <br>
+    <br>
+    <!-- Need datalist under id dipWool with wool options, check redundancies between different wool formulas -->
+    <input id="entEr" type="button" onclick="canRead()" value="Submit">
+    </form>
+
+    <script src="../../GlobVar.js"></script>
+
+    <script>
+        // canRead(); saveData(); redTest(); 
+    
+    // localStorage.setItem('score', JSON.stringify(playx.innerHTML));
+
+
+    // Special circumstance for two same color types, include or enter twice?
+    document.getElementById("altW").style.display = "none";
+
+    document.getElementById("dipQuan").addEventListener('input', (event) => {
+        const value = Number(event.target.value);
+
+        if (value === 2) {
+            document.getElementById("altW").style.display = "block";
+        } else {
+            document.getElementById("altW").style.display = "none";
+        };
+    })
+
+    document.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            document.getElementById("entEr").click();
+        }
+    });
+
+    function canRead() {
+        var dpQ = document.getElementById("dipQuan").value;
+        var dpC = document.getElementById("dipColor").value;
+        var dpW = document.getElementById("dipWool").value;
+        var w = document.getElementById("cuStom").value;
+        var wD = document.getElementById("cusTom").value;
+
+        if (document.getElementById("dipQuan").value == "") {
+            alert("Please enter how many!");
+        };
+        
+
+        // Chemical Math:
+
+        if (document.getElementById("y").checked) {
+            var c19 = smaLS -= (w * 0.04);
+            var c2 = afLS -= (w * 0.005);
+            var c26 = ucnLS -= (w * 0.02);
+
+            localStorage.setItem("Sodium Acetate", c19);
+            localStorage.setItem("Albaflow SF Plus", c2);
+            localStorage.setItem("Ultravon CN", c26);
+        };
+
+        
+
+        if (dpC === "883 Green") {
+            if (dpW === "36E") {
+                var c2 = afLS -= (w * 0.005);
+                var c19 = smaLS -= (w * 0.02);
+                var c22 = smsLS -= (w * 0.1);
+                var c6 = agsLS -= (w * 0.01);
+                var c1 = aaLS -= (w * 0.04);
+
+                localStorage.setItem("Albaflow SF Plus", c2);
+                localStorage.setItem("Sodium Acetate", c19);
+                localStorage.setItem("Sodium Sulfate", c22);
+                localStorage.setItem("Albegal Set", c6);
+                localStorage.setItem("Acetic Acid", c1);
+
+            } else if (dpW === "22G") {
+                var c2 = afLS -= (w * 0.005);
+                var c19 = smaLS -= (w * 0.02);
+                var c22 = smsLS -= (w * 0.05);
+                var c17 = spLS -= (w * 0.015);
+                var c6 = agsLS -= (w * 0.005);
+                var c1 = aaLS -= (w * 0.04);
+
+                localStorage.setItem("Albaflow SF Plus", c2);
+                localStorage.setItem("Sodium Acetate", c19);
+                localStorage.setItem("Sodium Sulfate", c22);
+                localStorage.setItem("Sarabid Paw", c17);
+                localStorage.setItem("Albegal Set", c6);
+                localStorage.setItem("Acetic Acid", c1);
+
+            } else if (dpW === "TE7") {
+                var c2 = afLS -= (w * 0.005);
+                var c22 = smsLS -= (w * 0.05);
+                var c17 = spLS -= (w * 0.015)
+                var c6 = agsLS -= (w * 0.005);
+                var c1 = aaLS -= (w * 0.06);            
+                var c19 = smaLS -= (w * 0.02);
+                var c18 = saLS -= (w * 0.04);
+                var c10 = elLS -= (w * 0.02);
+                var c12 = faLS -= (w * 0.005);
+
+                localStorage.setItem("Albaflow SF Plus", c2);
+                localStorage.setItem("Sodium Sulfate", c22);
+                localStorage.setItem("Sarabid Paw", c17);
+                localStorage.setItem("Albegal Set", c6);
+                localStorage.setItem("Acetic Acid", c1); 
+                localStorage.setItem("Sodium Acetate", c19);
+                localStorage.setItem("Soda Ash", c18);
+                localStorage.setItem("Eriopon Lan", c10);
+                localStorage.setItem("Formic Acid", c12);
+            };
+        };
+
+        if (dpC === "886 Gold") { 
+            if (dpW === "36E") {
+            var c2 = afLS -= (w * 0.005);
+            var c19 = smaLS -= (w * 0.02);
+            var c22 = smsLS -= (w * 0.1);
+            var c6 = agsLS -= (w * 0.01);
+            var c1 = aaLS -= (w * 0.04);
+
+            localStorage.setItem("Albaflow SF Plus", c2);
+            localStorage.setItem("Sodium Acetate", c19);
+            localStorage.setItem("Sodium Sulfate", c22);
+            localStorage.setItem("Albegal Set", c6);
+            localStorage.setItem("Acetic Acid", c1);
+            };
+        };
+
+        // Dyes Math:
+
+        if (dpC === "883 Green") {
+            if (dpW === "36E") {
+                var d4 = lty2rLS -= (w * 0.01);
+                var d44 = ltb2raLS -= (w * 0.0095);
+                var d66 = ltbrgLS -= (w * 0.005);
+
+                localStorage.setItem("Lanaset Yellow 2R", d4);
+                localStorage.setItem("Lanaset Blue 2RA", d44);
+                localStorage.setItem("Lanaset Brown G", d66);
+
+            } else if (dpW === "22G") {
+                var d6 = llgyLS -= (w * 0.0087);
+                var d27 = llrceLS -= (w * 0.0038);
+                var d49 = llbceLS -= (w * 0.0097);
+
+                localStorage.setItem("Lanasol Golden Yellow CE", d6);
+                localStorage.setItem("Lanasol Red CE", d27);
+                localStorage.setItem("Lanasol Blue CE", d49);
+
+            } else if (dpW === "TE7") {
+                var d6 = llgyLS -= (w * 0.00765);
+                var d27 = llrceLS -= (w * 0.0036);
+                var d49 = llbceLS -= (w * 0.009);
+
+                localStorage.setItem("Lanasol Golden Yellow CE", d6);
+                localStorage.setItem("Lanasol Red CE", d27);
+                localStorage.setItem("Lanasol Blue CE", d49);
+            };
+        };
+
+        if (dpC === "886 Gold") { 
+            if (dpW === "36E") {
+                var d4 = lty2rLS -= (w * 0.00035);
+                var d14 = ltoLS -= (w * 0.00008);
+                var d65 = ltbrbnaLS -= (w * 0.00006);
+
+                localStorage.setItem("Lanaset Yellow 2R", d4);
+                localStorage.setItem("Lanaset Orange RN", d14);
+                localStorage.setItem("Lanaset Brown B-NA", d65);
+
+            };
+        };    
+
+    };
+    </script>
+</body>
+</html>

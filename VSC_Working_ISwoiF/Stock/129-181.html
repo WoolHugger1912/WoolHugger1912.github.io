@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Stock: 129 - 181</title>
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    .wrapper {
+        width:200px;
+    }
+
+    .customer {
+        width:75px;
+    }
+</style>
+</head>
+<body>
+<h1>Stock Dips</h1>
+    <form action="mathInven.html" method="get">
+    <caption>What Color?</caption>
+    <input id="dipColor" list="dyeNumbers">
+    <datalist id="dyeNumbers">
+        <option value="132 Gold"></option>
+        <option value="133 Olive"></option>
+        <option value="135 Spice"></option>
+        <option value="136 Rust"></option>
+        <option value="137 Navy"></option>
+        <option value="138 Red"></option>
+    </datalist>
+    <br>
+    <br>
+    <caption>What Wool type?</caption>
+    <input id="dipWool" list="woolTypes">
+    <datalist id="woolTypes">
+        <option value="A8">A8</option>
+        <option value="B2">B2</option>
+        <option value="B5">B5</option>
+        <option value="C9">C9</option>
+        <option value="D6">D6</option>
+        <option value="D5">D5</option>
+        <option value="D8">D8</option>
+        <option value="F3">F3</option>
+        <option value="G3">G3</option>
+        <option value="G5">G5</option>
+        <option value="G8">G8</option>
+        <option value="J6">J6</option>
+        <option value="P1">P1</option>
+        <option value="T7">T7</option>
+        <option value="Y2">Y2</option>
+        <option value="Y7">Y7</option>
+        <option value="Y9">Y9</option>
+    </datalist>
+    <br>
+    <br>
+    <caption>How many?</caption>
+    <p><input id="dipQuan" type="number"></p>
+    <br>
+    <br>
+    <caption>What's the weight?</caption>
+    <p><input type="radio" name="tyPe" id="bigDip"><label for="bigDip">525 lbs.</label></p>
+    <p><input type="radio" name="tyPe" id="smallDip"><label for="smallDip">190 lbs.</label></p>
+    <p><input type="radio" name="tyPe" id="smallerDip"><label for="smallerDip">90 lbs.</label></p>
+    <p><input type="radio" name="tyPe" id="cusTom">Custom: <input id="cuStom" type="number"></p>
+    <br>
+    <br>
+    <!-- Need datalist under id dipWool with wool options, check redundancies between different wool formulas -->
+    <input id="entEr" type="button" onclick="canRead()" value="Submit">
+    </form>
+
+    <script src="../GlobVar.js"></script>
+
+    <script>
+        // canRead(); saveData(); redTest(); 
+    
+    // localStorage.setItem('score', JSON.stringify(playx.innerHTML));
+
+    document.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            document.getElementById("entEr").click();
+        }
+    });
+
+    function canRead() {
+        var dpQ = document.getElementById("dipQuan").value;
+        var dpC = document.getElementById("dipColor").value;
+        var dpW = document.getElementById("dipWool").value;
+        var dpCW = document.getElementById("cuStom").value;
+
+        if (document.getElementById("dipQuan").value == "") {
+            alert("Please enter how many!");
+        };
+        
+        if (document.getElementById("bigDip").checked) {
+            w = 525;
+        } else if (document.getElementById("smallDip").checked) {
+            w = 190;
+        } else if (document.getElementById("smallerDip").checked) {
+            w = 90;
+        } else if (document.getElementById("cusTom").checked) {
+            w = dpCW;
+        };
+
+        // Chemical Math:
+
+        if (dpC === "132 Gold" || dpC === "133 Olive") {
+            if (dpW === "B5" || dpW === "F3") {
+                // 132 confirmed to share B5 and F3 chems quantity with 133, haven't checked other dpWs
+
+                var c2 = afLS -= (w * 0.0025) * dpQ;
+                var c16 = mtLS -= (w * 0.015) * dpQ;
+                var c12 = faLS -= (w * 0.008) * dpQ;
+
+                localStorage.setItem("Albaflow SF Plus", c2);
+                localStorage.setItem("Miralan TOP", c16);
+                localStorage.setItem("Formic Acid", c12);
+            };
+        };
+
+        if (dpC === "135 Spice") {
+            if (dpW === "P1") {
+                var c2 = afLS -= (w * 0.0025) * dpQ;
+                var c16 = mtLS -= (w * 0.015) * dpQ;
+                var c12 = faLS -= (w * 0.005) * dpQ;
+
+                localStorage.setItem("Albaflow SF Plus", c2);
+                localStorage.setItem("Miralan TOP", c16);
+                localStorage.setItem("Formic Acid", c12);
+
+            } else if (dpW === "Y7") {
+                var c2 = afLS -= (w * 0.0025) * dpQ;
+                var c16 = mtLS -= (w * 0.015) * dpQ;
+                var c12 = faLS -= (w * 0.01) * dpQ;
+
+                localStorage.setItem("Albaflow SF Plus", c2);
+                localStorage.setItem("Miralan TOP", c16);
+                localStorage.setItem("Formic Acid", c12);
+
+            } else if (dpW === "F3") {
+
+                var c2 = afLS -= (w * 0.0025) * dpQ;
+                var c16 = mtLS -= (w * 0.015) * dpQ;
+                var c12 = faLS -= (w * 0.008) * dpQ;
+
+                localStorage.setItem("Albaflow SF Plus", c2);
+                localStorage.setItem("Miralan TOP", c16);
+                localStorage.setItem("Formic Acid", c12);
+            };
+        };
+
+        if (dpC === "136 Rust") {
+            if (dpW === "B5" || dpW === "F3") {
+                var c2 = afLS -= (w * 0.0025) * dpQ;
+                var c16 = mtLS -= (w * 0.015) * dpQ;
+                var c12 = faLS -= (w * 0.008) * dpQ;
+
+                localStorage.setItem("Albaflow SF Plus", c2);
+                localStorage.setItem("Miralan TOP", c16);
+                localStorage.setItem("Formic Acid", c12);
+
+            } else if (dpW === "C9") {
+
+                var c2 = afLS -= (w * 0.0025) * dpQ;
+                var c16 = mtLS -= (w * 0.015) * dpQ;
+                var c12 = faLS -= (w * 0.005) * dpQ;
+
+                localStorage.setItem("Albaflow SF Plus", c2);
+                localStorage.setItem("Miralan TOP", c16);
+                localStorage.setItem("Formic Acid", c12);
+            };
+        };
+
+        if (dpC === "137 Navy") {
+            if (dpW === "B5") {
+                var c2 = afLS -= (w * 0.005) * dpQ;
+                var c15 = mlLS -= (w * 0.02) * dpQ;
+                var c6 = agsLS -= (w * 0.005) * dpQ;
+                var c12 = faLS -= (w * 0.017) * dpQ;
+                var c18 = saLS -= (w * 0.03) * dpQ;
+                var c10 = elLS -= (w * 0.02) * dpQ;
+
+                localStorage.setItem("Albaflow SF Plus", c2);
+                localStorage.setItem("Miralan LTD", c15);
+                localStorage.setItem("Albegal Set", c6);
+                localStorage.setItem("Formic Acid", c12);
+                localStorage.setItem("Soda Ash", c18);
+                localStorage.setItem("Eriopon Lan", c10);
+                
+            } else if (dpW === "P1") {
+
+                var c2 = afLS -= (w * 0.005) * dpQ;
+                var c15 = mlLS -= (w * 0.02) * dpQ;
+                var c6 = agsLS -= (w * 0.005) * dpQ;
+                var c12 = faLS -= (w * 0.019) * dpQ;
+                var c18 = saLS -= (w * 0.03) * dpQ;
+                var c10 = elLS -= (w * 0.02) * dpQ;
+
+                localStorage.setItem("Albaflow SF Plus", c2);
+                localStorage.setItem("Miralan LTD", c15);
+                localStorage.setItem("Albegal Set", c6);
+                localStorage.setItem("Formic Acid", c12);
+                localStorage.setItem("Soda Ash", c18);
+                localStorage.setItem("Eriopon Lan", c10);
+            };
+        };
+
+        if (dpC === "138 Red") {
+            if (dpW === "C9") {
+                var c2 = afLS -= (w * 0.005) * dpQ;
+                var c15 = mlLS -= (w * 0.02) * dpQ;
+                var c6 = agsLS -= (w * 0.005) * dpQ;
+                var c12 = faLS -= (w * 0.009) * dpQ;
+                var c18 = saLS -= (w * 0.02) * dpQ;
+                var c10 = elLS -= (w * 0.02) * dpQ;
+
+                localStorage.setItem("Albaflow SF Plus", c2);
+                localStorage.setItem("Miralan LTD", c15);
+                localStorage.setItem("Albegal Set", c6);
+                localStorage.setItem("Formic Acid", c12);
+                localStorage.setItem("Soda Ash", c18);
+                localStorage.setItem("Eriopon Lan", c10);
+            };
+        };
+
+        // Dyes Math:
+
+        if (dpC === "132 Gold") {
+            if (dpW === "B5") {
+                var d15 = tnoLS -= (w * 0.0013);                
+                var d5 = lty4gnLS -= (w * 0.019);
+
+                localStorage.setItem("Telon Orange M-GSN", d15);
+                localStorage.setItem("Lanaset Yellow 4GN", d5);
+
+            } else if (dpW === "F3") {
+                
+                var d15 = tnoLS -= (w * 0.0016);                
+                var d5 = lty4gnLS -= (w * 0.018);
+
+                localStorage.setItem("Telon Orange M-GSN", d15);
+                localStorage.setItem("Lanaset Yellow 4GN", d5);
+            };
+        };
+
+        if (dpC === "133 Olive") {
+            if (dpW === "B5") {
+                var d14 = ltoLS -= (w * 0.00506) * dpQ;
+                var d41 = ltgrygLS -= (w * 0.022315) * dpQ;
+                var d4 = lty2rLS -= (w * 0.015) * dpQ;                
+
+                localStorage.setItem("Lanaset Orange RN", d14);
+                localStorage.setItem("Lanaset Grey G", d41);
+                localStorage.setItem("Lanaset Yellow 2R", d4);                
+
+            } else if (dpW === "F3") {
+
+                var d4 = lty2rLS -= (w * 0.017) * dpQ;
+                var d14 = ltoLS -= (w * 0.00566) * dpQ;
+                var d41 = ltgrygLS -= (w * 0.0259) * dpQ;
+
+                localStorage.setItem("Lanaset Yellow 2R", d4);
+                localStorage.setItem("Lanaset Orange RN", d14);
+                localStorage.setItem("Lanaset Grey G", d41);
+            };
+        };
+
+        if (dpC === "135 Spice") {
+            if (dpW === "P1") {
+                var d4 = lty2rLS -= (w * 0.00991) * dpQ;
+                var d23 = ltr2bLS -= (w * 0.004476) * dpQ;
+                var d41 = ltgrygLS -= (w * 0.001929) * dpQ;
+
+                localStorage.setItem("Lanaset Yellow 2R", d4);
+                localStorage.setItem("Lanaset Red 2B", d23)
+                localStorage.setItem("Lanaset Grey G", d41);
+                
+            } else if (dpW === "Y7") {
+
+                var d4 = lty2rLS -= (w * 0.007) * dpQ;
+                var d28 = ltrgLS -= (w * 0.003) * dpQ;
+                var d41 = ltgrygLS -= (w * 0.0013) * dpQ;
+
+                localStorage.setItem("Lanaset Yellow 2R", d4);
+                localStorage.setItem("Lanaset Red G", d28);
+                localStorage.setItem("Lanaset Grey G", d41);
+            } else if (dpW === "F3") {
+
+                var d4 = lty2rLS -= (w * 0.009) * dpQ;
+                var d23 = ltr2bLS -= (w * 0.004) * dpQ;
+                var d41 = ltgrygLS -= (w * 0.00165) * dpQ;
+
+                localStorage.setItem("Lanaset Yellow 2R", d4);
+                localStorage.setItem("Lanaset Red 2B", d23)
+                localStorage.setItem("Lanaset Grey G", d41);
+            };
+        };
+
+        if (dpC === "136 Rust") {
+            if (dpW === "B5") {
+                var d14 = ltoLS -= (w * 0.0118) * dpQ;
+                var d28 = ltrgLS -= (w * 0.006) * dpQ;
+                var d65 = ltbrbnaLS -= (w * 0.0084) * dpQ;
+
+                localStorage.setItem("Lanaset Orange RN", d14);
+                localStorage.setItem("Lanaset Red G", d28);
+                localStorage.setItem("Lanaset Brown B-NA", d65);
+
+            } else if (dpW === "F3") {
+
+                var d14 = ltoLS -= (w * 0.014) * dpQ;
+                var d28 = ltrgLS -= (w * 0.007) * dpQ;
+                var d65 = ltbrbnaLS -= (w * 0.01) * dpQ;
+
+                localStorage.setItem("Lanaset Orange RN", d14);
+                localStorage.setItem("Lanaset Red G", d28);
+                localStorage.setItem("Lanaset Brown B-NA", d65);
+
+            } else if (dpW === "C9") {
+
+                var d1 = bxyLS -= (w * 0.004) * dpQ;
+                var d19 = bxrLS -= (w * 0.0074) * dpQ;
+                var d64 = bxbrLS -= (w * 0.0084) * dpQ;
+
+                localStorage.setItem("Bemaplex Yellow M-T", d1);
+                localStorage.setItem("Bemaplex Red M-T", d19);
+                localStorage.setItem("Bemaplex Brown D-BD", d64);
+            };
+        };
+
+        if (dpC === "137 Navy") {
+            if (dpW === "B5") {
+                var d27 = llrceLS -= (w * 0.0104) * dpQ;
+                var d49 = llbceLS -= (w * 0.032) * dpQ;
+                var d69 = llblLS -= (w * 0.008) * dpQ;
+
+                localStorage.setItem("Lanasol Red CE", d27);
+                localStorage.setItem("Lanasol Blue CE", d49);
+                localStorage.setItem("Lanasol Black CE", d69);  
+
+            } else if (dpW === "P1") {
+
+                var d27 = llrceLS -= (w * 0.0018) * dpQ;
+                var d62 = llnLS -= (w * 0.0365) * dpQ;
+                var d69 = llblLS -= (w * 0.002) * dpQ;
+
+                localStorage.setItem("Lanasol Red CE", d27);
+                localStorage.setItem("Lanasol Navy CE", d62);
+                localStorage.setItem("Lanasol Black CE", d69);    
+            };
+        };
+
+        if (dpC === "138 Red") {
+            if (dpW === "C9") {
+                var d27 = llrceLS -= (w * 0.04) * dpQ;
+                var d25 = llboceLS -= (w * 0.012) * dpQ;
+
+                localStorage.setItem("Lanasol Red CE", d27);
+                localStorage.setItem("Lanasol Bordeaux CE", d25);
+            };
+        };
+        
+    };
+    </script>
+</body>
+</html>
+
