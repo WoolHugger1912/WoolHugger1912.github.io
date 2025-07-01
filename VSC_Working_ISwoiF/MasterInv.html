@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Master Inventory</title>
+<style>
+
+input {
+  border: none;
+  border-bottom: 2px solid black;
+  width: 220px;
+}
+
+table, th, td {
+  border: 1px solid;
+}
+
+table {
+  width: 100%;
+}
+
+.tyPe td {
+  text-align: center;
+  font-weight: bold;
+  height: 30px;
+}
+
+td {
+  width: 200px;
+}
+
+tr {
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<input id="lookUp" type="text" onkeyup="searchInv()" placeholder="Search Inventory">
+<br>
+<br>
+<form action="mathInven.html" method="get">
+<table id="tableId">
+  <th>Name</th>
+  <th>Price per lbs.</th>
+  <th>Total (Weigh Area & Storage)</th>
+  <th>Total (Cost)</th>
+<tb>
+  <tr class="tyPe">
+    <td colspan="4">Chemicals</td>
+  </tr>
+  <tr>
+    <td>Acetic Acid</td>
+    <td>66¢</td>
+    <td id="aaLS"></td>
+    <td id="aaLSc"></td>
+  </tr>
+  <tr>
+    <td>Albaflow SF Plus</td>
+    <td>$2.92</td>
+    <td id="afLS"></td>
+    <td id="afLSc"></td>
+  </tr>
+  <tr>
+    <td>Albafluid SL Conc</td>
+    <td>$1.25</td>
+    <td id="afscLS"></td>
+    <td id="afscLSc"></td>
+  </tr>
+  <tr>
+    <td>Albegal A</td>
+    <td>$3.32</td>
+    <td id="agaLS"></td>
+    <td id="agaLSc"></td>
+  </tr>
+  <tr>
+    <td>Albegal E3-B</td>
+    <td>$6.20</td>
+    <td id="ageLS"></td>
+    <td id="ageLSc"></td>
+  </tr>
+  <tr>
+    <td>Albegal Set</td>
+    <td>$4.15</td>
+    <td id="agsLS"></td>
+    <td id="agsLSc"></td>
+  </tr>
+  <tr>
+    <td>Clarite Bac</td>
+    <td>$2.72</td>
+    <td id="cbLS"></td>
+    <td id="cbLSc"></td>
+  </tr>
+  <tr>
+    <td>Color Clear</td>
+    <td>$4.06</td>
+    <td id="ccLS"></td>
+    <td id="ccLSc"></td>
+  </tr>
+  <tr>
+    <td>Eriopon E3-Save</td>
+    <td>$2.75</td>
+    <td id="epeLS"></td>
+    <td id="epeLSc"></td>
+  </tr>
+  <tr>
+   <td>Eriopon Lan</td>
+   <td>$2.75</td>
+   <td id="eplLS"></td>
+   <td id="eplLSc"></td>
+  </tr>
+  <tr>
+   <td>Formic Acid</td>
+   <td>70¢</td>
+   <td id="faLS"></td>
+   <td id="faLSc"></td>
+  </tr>
+  <tr>
+   <td>Hydrogen Peroxide</td>
+   <td>52¢</td>
+   <td id="hpLS"></td>
+   <td id="hpLSc"></td>
+  </tr>
+  <tr>
+    <td>Hydroxylamine Sulfate</td>
+    <td>$8.96</td>
+    <td id="hsLS"></td>
+    <td id="hsLSc"></td>
+  </tr>
+  <tr>
+   <td>Miralan LTD</td>
+   <td>$5.72</td>
+   <td id="mlLS"></td>
+   <td id="mlLSc"></td>
+  </tr>
+  <tr>
+    <td>Miralan Top</td>
+    <td>$3.08</td>
+    <td id="mtLS"></td>
+    <td id="mtLSc"></td>
+  </tr>
+  <tr>
+    <td>Sarabid Paw</td>
+    <td>$2.60</td>
+    <td id="spLS"></td>
+    <td id="spLSc"></td>
+  </tr>
+  <tr>
+    <td>Soda Ash</td>
+    <td>44¢</td>
+    <td id="saLS"></td>
+    <td id="saLSc"></td>
+  </tr>
+  <tr>
+    <td>Sodium Acetate</td>
+    <td>$3.19</td>
+    <td id="smaLS"></td>
+    <td id="smaLSc"></td>
+  </tr>
+  <tr>
+    <td>Sodium Bicarbonate</td>
+    <td>35¢</td>
+    <td id="smbLS"></td>
+    <td id="smbLSc"></td>
+  </tr>
+  <tr>
+    <td>Sodium Metabisulfate</td>
+    <td>45¢</td>
+    <td id="smmLS"></td>
+    <td id="smmLSc"></td>
+  </tr>
+  <tr>
+    <td>Sodium Sulfate</td>
+    <td>37¢</td>
+    <td id="smsLS"></td>
+    <td id="smsLSc"></td>
+  </tr>
+  <tr>
+    <td>Solopol DE3</td>
+    <td>$8.54</td>
+    <td id="spdLS"></td>
+    <td id="spdLSc"></td>
+  </tr>
+  <tr>
+    <td>Thiourea-Dioxide</td>
+    <td>$3.65</td>
+    <td id="tdLS"></td>
+    <td id="tdLSc"></td>
+  </tr>
+  <tr>
+    <td>Tinegal NT</td>
+    <td>$4.34</td>
+    <td id="tnLS"></td>
+    <td id="tnLSc"></td>
+  </tr>
+  <tr>
+    <td>Ultravon CN</td>
+    <td>$2.32</td>
+    <td id="ucnLS"></td>
+    <td id="ucnLSc"></td>
+  </tr>
+  <tr>
+    <td>Univadine DPL</td>
+    <td>$1.83</td>
+    <td id="uvddplLS"></td>
+    <td id="uvddplLSc"></td>
+  </tr>
+  <tr>
+    <td>Univadine DFM</td>
+    <td>$3.16</td>
+    <td id="uvddfmLS"></td>
+    <td id="uvddfmLSc"></td>
+  </tr>
+  <tr>
+    <td>UV Fast PLF</td>
+    <td>$6.08</td>
+    <td id="ufpLS"></td>
+    <td id="ufpLSc"></td>
+  </tr>
+  <tr>
+    <td>UV Fast W. Liq.</td>
+    <td>$22.50</td>
+    <td id="ufwlLS"></td>
+    <td id="ufwlLSc"></td>
+  </tr>
+  
+  <tr class="tyPe">
+    <td colspan="4">Dyes</td>
+  </tr>
+ <tr>
+   <td>Bemaplex Yellow M-T</td>
+   <td>$7.00</td>
+   <td id="bemaYelo"></td>
+   <td id="bemaYeloc"></td>
+ </tr>
+ <tr>
+  <td>Bezaktiv Yellow WO-4G</td>
+  <td>$4.48</td>
+  <td id="bez4GYelo"></td>
+  <td id="bez4GYeloc"></td>
+ </tr> 
+ <tr>
+  <td>Bezaktiv Yellow WO-4R</td>
+  <td>$4.48</td>
+  <td id="bez4RYelo"></td>
+  <td id="bez4RYeloc"></td>
+ </tr>
+ <tr>
+  <td>Bemacid Yellow E-4G</td>
+  <td>$4.48</td>
+  <td id="bemacYelo"></td>
+  <td id="bemacYeloc"></td>
+ </tr> 
+ <tr>
+ <td>Doracryl Golden Yellow XGFLS 200</td>
+ <td>$12.50</td>
+ <td id="doraYelo"></td>
+ <td id="doraYeloc"></td>
+</tr>
+ <tr>
+  <td>Lanaset Yellow 2R</td>
+  <td>$13.89</td>
+  <td id="lana2RYelo"></td>
+  <td id="lana2RYeloc"></td>
+</tr>
+ <tr>
+   <td>Lanaset Yellow 4GN</td>
+   <td>$27.49</td>
+   <td id="lana4GNYelo"></td>
+   <td id="lana4GNYeloc"></td>
+ </tr>
+ <tr>
+  <td>Lanasol Golden Yellow CE</td>
+  <td>$11.97</td>
+  <td id="lanaCEYelo"></td>
+  <td id="lanaCEYeloc"></td>
+ </tr>
+ <tr>
+   <td>Lanasol Yellow 4G</td>
+   <td>$22.55</td>
+   <td id="lana4GYelo"></td>
+   <td id="lana4GYeloc"></td>
+ </tr>
+ <tr>
+  <td>Tectilon Yellow 2G 200%</td>
+  <td>$1.00</td>
+  <td id="tect2GYelo"></td>
+  <td id="tect2GYeloc"></td>
+ </tr>
+ <tr>
+  <td>Tectilon Yellow GWL</td>
+  <td>$33.15</td>
+  <td id="tectGWLYelo"></td>
+  <td id="tectGWLYeloc"></td>
+ </tr>
+<tr>
+  <td>Telon Yellow 4R Micro 01</td>
+  <td>$9.35</td>
+  <td id="telo4RYelo"></td>
+  <td id="telo4RYeloc"></td>
+</tr>
+<tr>
+  <td>Terasil Yellow CR</td>
+  <td>$9.58</td>
+  <td id="teraCRYelo"></td>
+  <td id="teraCRYeloc"></td>
+</tr>
+<tr>
+ <td>Teratop Yellow BRLF</td>
+ <td>$1.00</td>
+ <td id="teraBRLFYelo"></td>
+ <td id="teraBRLFYeloc"></td>
+</tr>
+<tr>
+  <td>Teratop/Terasil Yellow GWL-01</td>
+  <td>$8.75</td>
+  <td id="teraGWLYelo"></td>
+  <td id="teraGWLYeloc"></td>
+</tr>
+<tr>
+ <td>Lanaset Orange RN</td>
+ <td>$15.93</td>
+ <td id="lanaRNOrng"></td>
+ <td id="lanaRNOrngc"></td>
+</tr>
+<tr>
+ <td>Telon Orange M-GSN 01</td>
+ <td>$18.65</td>
+ <td id="teloMGSNOrng"></td>
+ <td id="teloMGSNOrngc"></td>
+</tr>
+<tr>
+ <td>Terasil Orange TC-01</td>
+ <td>$7.52</td>
+ <td id="teraTCOrng"></td>
+ <td id="teraTCOrngc"></td>
+</tr>
+<tr>
+  <td>Terasil Orange 4RL</td>
+  <td>$1.00</td>
+  <td id="tera4RLOrng"></td>
+  <td id="tera4RLOrngc"></td>
+</tr>
+<tr>
+ <td>Bezaktiv Red WO-BB</td>
+ <td>$4.53</td>
+ <td id="bezRed"></td>
+ <td id="bezRedc"></td>
+</tr>
+<tr>
+  <td>Bemaplex Red M-T</td>
+  <td>$8.98</td>
+  <td id="bemaMTRed"></td>
+  <td id="bemaMTRedc"></td>
+</tr>
+<tr>
+ <td>Bemacid Red F-4B</td>
+ <td>$6.26</td>
+ <td id="bemacF4BRed"></td>
+ <td id="bemacF4BRedc"></td>
+</tr>
+<tr>
+  <td>Dorasyn Red C-2B</td>
+  <td>$1.00</td>
+  <td id="dorac2BRed"></td>
+  <td id="dorac2BRedc"></td>
+</tr>
+<tr>
+ <td>Erionyl Red B-10B</td>
+ <td>$31.82</td>
+ <td id="eriRed"></td>
+ <td id="eriRedc"></td>
+</tr>
+<tr>
+ <td>Lanaset Red 2B</td>
+ <td>$38.75</td>
+ <td id="lana2BRed"></td>
+ <td id="lana2BRedc"></td>
+</tr>
+<tr>
+ <td>Lanaset Bordeaux B</td>
+ <td>$28.84</td>
+ <td id="lanaBBord"></td>
+ <td id="lanaBBordc"></td>
+</tr>
+<tr>
+  <td>Lanasol Bordeaux CE</td>
+  <td>$12.24</td>
+  <td id="lanaCEBord"></td>
+  <td id="lanaCEBordc"></td>
+</tr>
+<tr>
+ <td>Lanasol Red 6G</td>
+ <td>$18.00</td>
+ <td id="lana6GRed"></td>
+ <td id="lana6GRedc"></td>
+</tr>
+<tr>
+  <td>Lanasol Red CE</td>
+  <td>$15.69</td>
+  <td id="lanaCERed"></td>
+  <td id="lanaCERedc"></td>
+</tr>
+<tr>
+ <td>Lanaset Red G</td>
+ <td>$27.47</td>
+ <td id="lanaGRed"></td>
+ <td id="lanaGRedc"></td>
+</tr>
+<tr>
+  <td>Lanasyn Scarlet F-3GL 130%</td>
+  <td>$45.35</td>
+  <td id="lanaF3GLScar"></td>
+  <td id="lanaF3GLScarc"></td>
+</tr>
+<tr>
+ <td>Maxilon Red GRL 200%</td>
+ <td>$21.87</td>
+ <td id="maxiRed"></td>
+ <td id="maxiRedc"></td>
+</tr>
+<tr>
+ <td>Optilan Scarlet MF-GL 130</td>
+ <td>$3.00</td>
+ <td id="optiScar"></td>
+ <td id="optiScarc"></td>
+</tr>
+<tr>
+ <td>Tectilon Red 2B 200%</td>
+ <td>$32.74</td>
+ <td id="tect2BRed"></td>
+ <td id="tect2BRedc"></td>
+</tr>
+<tr>
+  <td>Telon Red A-FG</td>
+  <td>$19.37</td>
+  <td id="teloRed"></td>
+  <td id="teloRedc"></td>
+</tr>
+<tr>
+ <td>Telon Rhodamine</td>
+ <td>$27.50</td>
+ <td id="teloRhod"></td>
+ <td id="teloRhodc"></td>
+</tr>
+<tr>
+  <td>Terasil Red 3BL.01 150%</td>
+  <td>$11.51</td>
+  <td id="tera3BLRed"></td>
+  <td id="tera3BLRedc"></td>
+</tr>
+<tr>
+ <td>Terasil Red CB</td>
+ <td>$18.22</td>
+ <td id="teraCBRed"></td>
+ <td id="teraCBRedc"></td>
+</tr>
+<tr>
+  <td>Terasil Red R</td>
+  <td>$1.00</td>
+  <td id="teraRRed"></td>
+  <td id="teraRRedc"></td>
+</tr>
+<tr>
+ <td>Teratop Pink 2GLA</td>
+ <td>$17.06</td>
+ <td id="teraPink"></td>
+ <td id="teraPinkc"></td>
+</tr>
+<tr>
+ <td>Lanaset Violet B</td>
+ <td>$34.57</td>
+ <td id="lanaViol"></td>
+ <td id="lanaViolc"></td>
+</tr>
+<tr>
+ <td>Telon Violet M-RWN 01</td>
+ <td>$60.00</td>
+ <td id="teloViol"></td>
+ <td id="teloViolc"></td>
+</tr>
+<tr>
+  <td>Lanaset Grey G</td>
+  <td>$30.03</td>
+  <td id="lanaGrey"></td>
+  <td id="lanaGreyc"></td>
+</tr>
+<tr>
+ <td>Doracid Blue SBL</td>
+ <td>$1.00</td>
+ <td id="doraBlue"></td>
+ <td id="doraBluec"></td>
+</tr>
+<tr>
+  <td>Bezaktiv Blue WO-DB</td>
+  <td>$6.65</td>
+  <td id="bezBlue"></td>
+  <td id="bezBluec"></td>
+</tr>
+<tr>
+ <td>Lanaset Blue 2RA</td>
+ <td>$44.13</td>
+ <td id="lana2RABlue"></td>
+ <td id="lana2RABluec"></td>
+</tr>
+<tr>
+  <td>Lanaset Blue 5G</td>
+  <td>$67.19</td>
+  <td id="lana5GBlue"></td>
+  <td id="lana5GBluec"></td>
+</tr>
+<tr>
+ <td>Lanasol Blue 3G</td>
+ <td>$46.65</td>
+ <td id="lana3GBlue"></td>
+ <td id="lana3GBluec"></td>
+</tr>
+<tr>
+ <td>Lanasol Blue 3R</td>
+ <td>$42.75</td>
+ <td id="lana3RBlue"></td>
+ <td id="lana3RBluec"></td>
+</tr>
+<tr>
+ <td>Lanasol Blue 8G</td>
+ <td>$39.62</td>
+ <td id="lana8GBlue"></td>
+ <td id="lana8GBluec"></td>
+</tr>
+<tr>
+  <td>Lanasol Blue CE</td>
+  <td>$29.23</td>
+  <td id="lanaCEBlue"></td>
+  <td id="lanaCEBluec"></td>
+</tr>
+<tr>
+ <td>Maxilon Blue SL 200%</td>
+ <td>$19.06</td>
+ <td id="maxiBlue"></td>
+ <td id="maxiBluec"></td>
+</tr>
+<tr>
+  <td>Tectilon Blue 4RS KWL 200%</td>
+  <td>$34.43</td>
+  <td id="tect4RSBlue"></td>
+  <td id="tect4RSBluec"></td>
+</tr>
+<tr>
+ <td>Tectilon Blue 6G 200%</td>
+ <td>$1.00</td>
+ <td id="tect6GBlue"></td>
+ <td id="tect6GBluec"></td>
+</tr>
+<tr>
+  <td>Telon Blue M-GLW</td>
+  <td>$57.51</td>
+  <td id="teloMGLWBlue"></td>
+  <td id="teloMGLWBluec"></td>
+</tr>
+<tr>
+ <td>Telon Blue RR</td>
+ <td>$35.00</td>
+ <td id="teloRRBlue"></td>
+ <td id="teloRRBluec"></td>
+</tr>
+<tr>
+ <td>Terasil Blue 3RL-02 150%</td>
+ <td>$33.84</td>
+ <td id="tera3RLBlue"></td>
+ <td id="tera3RLBluec"></td>
+</tr>
+<tr>
+ <td>Terasil/Teratop Blue GLF</td>
+ <td>$50.72</td>
+ <td id="teraGLFBlue"></td>
+ <td id="teraGLFBluec"></td>
+</tr>
+<tr>
+  <td>Terasil Blue RBS</td>
+  <td>$20.23</td>
+  <td id="teraRBSBlue"></td>
+  <td id="teraRBSBluec"></td>
+</tr>
+<tr>
+ <td>Teratop Blue BGE</td>
+ <td>$31.67</td>
+ <td id="teraBGEBlue"></td>
+ <td id="teraBGEBluec"></td>
+</tr>
+<tr>
+  <td>Teratop Blue BLF</td>
+  <td>$1.00</td>
+  <td id="teraBLFBlue"></td>
+  <td id="teraBLFBluec"></td>
+</tr>
+<tr>
+ <td>Bemaplex Navy M-T</td>
+ <td>$7.71</td>
+ <td id="bemaNavy"></td>
+ <td id="bemaNavyc"></td>
+</tr>
+<tr>
+  <td>Lanasyn Navy CF-R</td>
+  <td>$1.00</td>
+  <td id="lanaCFRNavy"></td>
+  <td id="lanaCFRNavyc"></td>
+</tr>
+<tr>
+ <td>Lanasol Navy CE</td>
+ <td>$11.42</td>
+ <td id="lanaCENavy"></td>
+ <td id="lanaCENavyc"></td>
+</tr>
+<tr>
+ <td>Lanaset Green B</td>
+ <td>$32.61</td>
+ <td id="lanaGreen"></td>
+ <td id="lanaGreenc"></td>
+</tr>
+<tr>
+ <td>Bemaplex Brown D-BD</td>
+ <td>$7.51</td>
+ <td id="bemaBrown"></td>
+ <td id="bemaBrownc"></td>
+</tr>
+<tr>
+  <td>Lanaset Brown B-NA</td>
+  <td>$12.13</td>
+  <td id="lanaBNABrown"></td>
+  <td id="lanaBNABrownc"></td>
+</tr>
+<tr>
+ <td>Lanaset Brown G-01</td>
+ <td>$38.16</td>
+ <td id="lanaGBrown"></td>
+ <td id="lanaGBrownc"></td>
+</tr>
+<tr>
+  <td>Bezaktiv Black WO-TF</td>
+  <td>$5.73</td>
+  <td id="bezBlck"></td>
+  <td id="bezBlckc"></td>
+</tr>
+<tr>
+  <td>Isolan Black 2S-LD</td>
+  <td>$6.83</td>
+  <td id="isolBlck"></td>
+  <td id="isolBlckc"></td>
+</tr>
+<tr>
+ <td>Lanasol Black CE</td>
+ <td>$11.00</td>
+ <td id="lanaCEBlck"></td>
+ <td id="lanaCEBlckc"></td>
+</tr>
+<tr>
+  <td>Lanasol Deep Black CE-R</td>
+  <td>$11.00</td>
+  <td id="lanaCEDpBlck"></td>
+  <td id="lanaCEDpBlckc"></td>
+ </tr>
+</tb>
+</table>
+</form>
+<br>
+<button id="exportButton">Export to Excel</button>
+
+<script src="MasterInvData.js"></script>
+</body>
+</html>

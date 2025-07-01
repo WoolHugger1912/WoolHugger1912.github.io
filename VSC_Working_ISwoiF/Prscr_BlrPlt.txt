@@ -1,0 +1,17 @@
+<p><h3>Disclaimer: For all dips 100 lbs. and higher the Inventory will register as having used a prescour.</h3></p>
+
+    <caption>Is there a prescour?</caption>
+    <p><input type="radio" name="prscr" id="y"><label for="y">Yes</label></p>
+    <p><input type="radio" name="prscr" id="n"><label for="n">No</label></p>
+    <br>
+    <br>
+
+        if (document.getElementById("y").checked) {
+            var c19 = smaLS -= (w * 0.04);
+            var c2 = afLS -= (w * 0.005);
+            var c26 = ucnLS -= (w * 0.02);
+
+            localStorage.setItem("Sodium Acetate", c19);
+            localStorage.setItem("Albaflow SF Plus", c2);
+            localStorage.setItem("Ultravon CN", c26);
+        };
