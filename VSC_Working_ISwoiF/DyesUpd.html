@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dye Updater</title>
+    <style>
+        .ban-ner {
+            text-align: center;
+        }
+
+        .tab-leau,
+        th,
+        td {
+            margin: auto;
+            border: 1px solid;
+            width: 50%;
+        }
+
+        /*
+datalist {
+    color: #ff00ff;
+    max-height: 1px;
+    width: 1px;
+    overflow: scroll;
+    background-color: #ff00ff;
+}
+*/
+        .chem-name,
+        option {
+            width: 175px;
+            scroll-behavior: smooth;
+        }
+
+        .act-name, option {
+            width: 175px;
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="ban-ner">Update Dyes</h1>
+<div>
+    <div id="iNt" style="display: none;">   
+        <table class="tab-leau">
+            <tb>
+            <td id="naME"></td>
+            <td id="weiGHT"></td>
+            </tb>
+        </table>
+    </div> 
+    <div id="aFt" style="display: none;">
+        <table class="tab-leau"> 
+            <tb>
+            <td>Should actually be:</td>
+            <td id="acTl"></td>
+            </tb>
+        </table>
+    </div>
+</div>
+    <br>
+    <form action="mathInven.html" method="get">
+        <caption>Which Dye?</caption>
+        <!-- <input id="chemName" list="chems"> -->
+        <p>
+        <!-- onfocus="this.size.width=1; this.size.height=10;" onblur="this.size=1;" onchange="this.size=1; this.blur();" -->
+        <div class="chem-name"><select id="chems">
+                <option value="nada" selected="true" disabled>Pick a Dye...</option>
+                <optgroup class="yellow" id="yLw" label="Yellows" style="background-color: rgb(240, 191, 30);">
+                <option value="Bemacid Yellow E-4G">Bemacid Yellow E-4G</option>                    
+                <option value="Bemaplex Yellow M-T">Bemaplex Yellow M-T</option>
+                <option value="Bezaktiv Yellow WO-4G">Bezaktiv Yellow WO-4G</option>
+                <option value="Bezaktiv Yellow WO-4R">Bezaktiv Yellow WO-4R</option>
+                <option value="Doracryl Golden Yellow">Doracryl Golden Yellow XGFLS 200</option>
+                <option value="Lanaset Yellow 2R">Lanaset Yellow 2R</option>
+                <option value="Lanaset Yellow 4GN">Lanaset Yellow 4GN</option>
+                <option value="Lanasol Golden Yellow CE">Lanasol Golden Yellow CE</option>
+                <option value="Lanasol Yellow 4G">Lanasol Yellow 4G</option>
+                <option value="Tectilon Yellow 2G">Tectilon Yellow 2G 200%</option>
+                <option value="Tectilon Yellow 3R">Tectilon Yellow 3R 200%</option>
+                <option value="Telon Yellow 4R">Telon Yellow 4R Micro 01</option>
+                <option value="Terasil Yellow CR">Terasil Yellow CR</option>
+                <option value="Teratop Yellow BRLF">Teratop Yellow BRLF</option>
+                <option value="Teratop Yellow GWL">Teratop Yellow GWL-01</option>
+                <optgroup label="Oranges" style="background-color: #ffa500;">
+                <option value="Lanaset Orange RN">Lanaset Orange RN</option>
+                <option value="Telon Orange M-GSN">Telon Orange M-GSN 01</option>
+                <option value="Terasil Orange TC">Terasil Orange TC-01</option>
+                <option value="Terasil Orange 4RL">Terasil Orange 4RL</option>
+                </optgroup>
+                <optgroup class="red" id="rD" label="Reds" style="background-color: rgb(180, 10, 10);">
+                <option value="Bezaktiv Red WO-BB">Bezaktiv Red WO-BB</option>
+                <option value="Bemaplex Red M-T">Bemaplex Red M-T</option>
+                <option value="Bemacid Red F-4B">Bemacid Red F-4B</option>
+                <option value="Dorasyn Red C-2B">Dorasyn Red C-2B</option>
+                <option value="Erionyl Red B-10B">Erionyl Red B-10B</option>
+                <option value="Lanaset Red 2B">Lanaset Red 2B</option>
+                <option value="Lanaset Bordeaux B" style="background-color: #ca0291;">Lanaset Bordeaux B</option>
+                <option value="Lanasol Bordeaux CE" style="background-color: #ca0291;">Lanasol Bordeaux CE</option>
+                <option value="Lanasol Red 6G">Lanasol Red 6G</option>
+                <option value="Lanasol Red CE">Lanasol Red CE</option>
+                <option value="Lanaset Red G">Lanaset Red G</option>
+                <option value="Lanasyn Scarlet F-3GL">Lanasyn Scarlet F-3GL 130%</option>
+                <option value="Maxilon Red GRL">Maxilon Red GRL 200%</option>
+                <option value="Optilan Scarlet MF-GL">Optilan Scarlet MF-GL 130</option>
+                <option value="Tectilon Red 2B">Tectilon Red 2B 200%</option>
+                <option value="Telon Red A-FG">Telon Red A-FG</option>
+                <option value="Telon Rhodamine">Telon Rhodamine</option>
+                <option value="Terasil Red 3BL">Terasil Red 3BL.01 150%</option>
+                <option value="Terasil Red CB">Terasil Red CB</option>
+                <option value="Terasil Red R">Terasil Red R</option>
+                <option value="Teratop Pink 2GLA" style="background-color: #c83f56;">Teratop Pink 2GLA</option>
+                </optgroup>
+                <optgroup class="violet" id="vLt" label="Violets" style="background-color: rgb(218, 92, 218);">
+                <option value="Lanaset Violet B">Lanaset Violet B</option>
+                <option value="Telon Violet M-RWN">Telon Violet M-RWN 01</option>
+                </optgroup>
+                <optgroup class="grey" id="gRy" label="Grey" style="background-color: #808080;">
+                <option value="Lanaset Grey G">Lanaset Grey G</option>
+                </optgroup>
+                <optgroup class="Blue" id="bLu" label="Blues" style="background-color: #305CDE;">
+                <option value="Doracid Blue SBL">Doracid Blue SBL</option>
+                <option value="Bezaktiv Blue WO-DB">Bezaktiv Blue WO-DB</option>
+                <option value="Lanaset Blue 2RA">Lanaset Blue 2RA</option>
+                <option value="Lanaset Blue 5G">Lanaset Blue 5G</option>
+                <option value="Lanasol Blue 3G">Lanasol Blue 3G</option>
+                <option value="Lanasol Blue 3R">Lanasol Blue 3R</option>
+                <option value="Lanasol Blue 8G">Lanasol Blue 8G</option>
+                <option value="Lanasol Blue CE">Lanasol Blue CE</option>
+                <option value="Maxilon Blue SL">Maxilon Blue SL 200%</option>
+                <option value="Tectilon Blue 4RS">Tectilon Blue 4RS KWL 200%</option>
+                <option value="Tectilon Blue 6G">Tectilon Blue 6G 200%</option>
+                <option value="Telon Blue M-GLW">Telon Blue M-GLW</option>
+                <option value="Telon Blue RR">Telon Blue RR</option>
+                <option value="Terasil Blue 3RL">Terasil Blue 3RL-02 150%</option>
+                <option value="Tera(sil/top) Blue GLF">Terasil/Teratop Blue GLF</option>
+                <option value="Terasil Blue RBS">Terasil Blue RBS</option>
+                <option value="Teratop Blue BGE">Teratop Blue BGE</option>
+                <option value="Teratop Blue BLF">Teratop Blue BLF</option>
+                </optgroup>
+                <optgroup class="navy" id="nVy" label="Navys" style="background-color: #202A45; color:white;">
+                <option value="Bemaplex Navy M-T">Bemaplex Navy M-T</option>
+                <option value="Lanasyn Navy CF-R">Lanasyn Navy CF-R (formerly: Dorolan Navy Blue ER)</option>
+                <option value="Lanasol Navy CE">Lanasol Navy CE</option>
+                </optgroup>
+                <optgroup class="green" id="gRn" label="Green" style="background-color: #008000;">
+                <option value="Lanaset Green B">Lanaset Green B</option>
+                </optgroup>
+                <optgroup class="brown" id="bRn" label="Browns" style="background-color: #895129;">
+                <option value="Bemaplex Brown D-BD">Bemaplex Brown D-BD</option>
+                <option value="Lanaset Brown B-NA">Lanaset Brown B-NA</option>
+                <option value="Lanaset Brown G">Lanaset Brown G-01</option>
+                </optgroup>
+                <optgroup class="black" id="bLk" label="Blacks" style="background-color: #000000; color:white;">
+                <option value="Bezaktiv Black WO-TF">Bezaktiv Black WO-TF</option>
+                <option value="Isolan Black 2S-LD">Isolan Black 2S-LD</option>
+                <option value="Lanasol Black CE">Lanasol Black CE</option>
+                <option value="Lanasol Deep Black">Lanasol Deep Black CE-R</option>
+            </optgroup>
+            </select></div>
+        </p>
+        <br>
+        <br>
+        <caption>How much?</caption>
+        <p><input id="invLBS" type="number" min="0"></p>
+        <br>
+        <br>
+        <p><div class="act-name"><select id="aCt" onfocus="this.size=10;" onblur="this.size=1;" onchange="this.size=1; this.blur();">
+        <option value="nada" selected="true" disabled>What are we doing...</option>
+        <option value="Adding">Adding to</option>
+        <option value="Subtracting">Subtracting from</option>
+        <option value="Replacing">Replacing</option>
+        </select></div></p>
+        <!--<caption>Are we adding to, subtracting from, or replacing the total?</caption>
+        <p><input type="radio" name="changeby" id="adding"><label for="adding">Adding to</label></p>
+        <p><input type="radio" name="changeby" id="subtracting"><label for="subtracting">Subtracting from</label></p>
+        <p><input type="radio" name="changeby" id="replacing"><label for="replacing">Replacing</label></p>-->
+        <br>
+        <br>
+        <input id="entEr" type="button" onclick="updaTION()" value="Submit">
+    </form>
+
+    <script>
+
+        document.addEventListener("keyup", function (event) {
+            if (event.keyCode === 13) {
+                document.getElementById("entEr").click();
+            }
+        })
+
+        /*document.getElementById("chems").onchange = function () {
+            var w = document.getElementById("chems").value;
+            var x = document.getElementById("tst");
+            var y = document.getElementById("naME");
+            var z = document.getElementById("weiGHT");
+
+            y.innerHTML = w;
+            z.innerHTML = Math.max(0, localStorage.getItem(w));
+
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            };
+        };*/
+
+    document.getElementById("chems").onchange = function() {
+        var cN = document.getElementById("chems").value;
+        var x = document.getElementById("iNt");
+        var y = document.getElementById("naME");
+        var z = document.getElementById("weiGHT");
+        var b = document.getElementById("aFt");
+        var c = document.getElementById("acTl");
+
+        y.innerHTML = cN;
+        z.innerHTML = localStorage.getItem(cN);
+        c.innerHTML = "";
+
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        };
+
+        if (b.style.display === "none") {
+            b.style.display = "block";
+        };
+        
+    };
+
+    document.getElementById("aCt").onchange = function() {
+        var cN = document.getElementById("chems").value;                
+        var rLS = localStorage.getItem(cN);
+        var iP = document.getElementById("invLBS").value;
+
+        var a = document.getElementById("aCt").value;
+        var b = document.getElementById("aFt");
+        var c = document.getElementById("acTl");
+
+        var y = document.getElementById("naME");
+
+        y.innerHTML = cN;
+
+        if (a === "Adding") {
+            var hN = +rLS + +iP;
+
+            c.innerHTML = hN;
+
+        } else if (a === "Subtracting") {
+            var hN = rLS - iP;
+
+            c.innerHTML = hN;
+
+        } else if (a === "Replacing") {
+            var hN = iP;
+
+            c.innerHTML = hN;
+        };
+
+        /*if (b.style.display === "none") {
+            b.style.display = "block";
+        };*/
+    };
+
+    function updaTION() {
+        var a = document.getElementById("aCt").value;
+
+        var cN = document.getElementById("chems").value;
+        var iP = document.getElementById("invLBS").value;
+        var rLS = localStorage.getItem(cN);
+        var lB = document.getElementById("weiGHT")
+
+        if (a === "Adding") {
+            var cU = +rLS + +iP;
+
+            localStorage.setItem(cN, cU);
+
+        } else if (a === "Subtracting") {
+            var cU = rLS - iP;
+
+            localStorage.setItem(cN, cU);
+
+        } else if (a === "Replacing") {
+            var cU = iP;
+
+            localStorage.setItem(cN, cU);
+        };
+
+        lB.innerHTML = localStorage.getItem(cN);
+
+        document.getElementById("chems").value = "nada";
+
+        document.getElementById("invLBS").value = 0;
+        
+        document.getElementById("aCt").value = "nada";
+    };
+
+        /*function updaTION() {
+            var cN = document.getElementById("chems").value;
+            var iP = parseInt(document.getElementById("invLBS").value);
+            var rLS = parseInt(localStorage.getItem(cN));
+            var lB = document.getElementById("weiGHT")
+
+            if (document.getElementById("adding").checked) {
+                var cU = rLS + iP;
+
+                localStorage.setItem(cN, cU);
+            } else if (document.getElementById("subtracting").checked) {
+                var cU = rLS - iP;
+
+                localStorage.setItem(cN, cU);
+            } else if (document.getElementById("replacing").checked) {
+                var cU = iP;
+
+                localStorage.setItem(cN, cU);
+            };
+
+            lB.innerHTML = Math.max(0, localStorage.getItem(cN));
+
+        };*/
+    </script>
+</body>
+
+</html>

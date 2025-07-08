@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Piece: 2160 - 2210</title>
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    .wrapper {
+        width:200px;
+    }
+
+    .customer {
+        width:75px;
+    }
+</style>
+</head>
+<body>
+<h1>Piece Dips</h1>
+    <form action="mathInven.html" method="get">
+    <caption>What Color?</caption>
+    <input id="dipColor" list="dyeNumbers">
+    <datalist id="dyeNumbers">
+        <option value="2209-8038 Midnight"></option>
+    </datalist>
+    <br>
+    <br>
+    <caption>How many?</caption>
+    <p><input id="dipQuan" type="number" max="4"></p>
+    <br>
+    <br>
+    <caption>What's the weight?</caption>
+    <p><input id="cuStom" type="number"></p>
+    <p id="altW"><input id="cusTom" type="number"></p>
+    <br>
+    <br>
+    <!-- Need datalist under id dipWool with wool options, check redundancies between different wool formulas -->
+    <input id="entEr" type="button" onclick="canRead()" value="Submit">
+    </form>
+    <script src="../GlobVar.js"></script>
+    <script>
+        // canRead(); saveData(); redTest(); 
+    
+    // localStorage.setItem('score', JSON.stringify(playx.innerHTML));
+
+
+    // Special circumstance for two same color types, include or enter twice?
+    document.getElementById("altW").style.display = "none";
+
+    document.getElementById("dipQuan").addEventListener('input', (event) => {
+        const value = Number(event.target.value);
+
+        if (value === 2) {
+            document.getElementById("altW").style.display = "block";
+        } else {
+            document.getElementById("altW").style.display = "none";
+        };
+    })
+
+    document.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            document.getElementById("entEr").click();
+        }
+    });
+
+    function multIf() {
+        var dpC = document.getElementById("dipColor").value;
+        var dpW = document.getElementById("dipWool").value;
+
+        if (dpC === "102 Black" && (dpW === "Y2" || dpW === "Y7" || dpW === "G8")) {
+            window.alert("Howdy");
+        };
+    };
+
+    function canRead() {
+
+        var dpQ = document.getElementById("dipQuan").value;
+        var dpC = document.getElementById("dipColor").value;
+        var w = document.getElementById("cuStom").value;
+        var wD = document.getElementById("cusTom").value;
+
+        if (document.getElementById("dipQuan").value == "") {
+            alert("Please enter how many!");
+        };
+        
+
+        // Chemical Math:
+
+        if (dpC === "2209-8038 Midnight") { 
+            var c1 = aaLS -= (w * 0.01); 
+            var c22 = smsLS -= (w * 0.1);
+            var c4 = agaLS -= (w * 0.005);
+            var c25 = tnLS -= (w * 0.0125);
+            var c3 = afscLS -= (w * 0.03);
+            var c2 = afLS -= (w * 0.015);
+            var c27 = uvddfmLS -= (w * 0.02);
+
+            localStorage.setItem("Acetic Acid", c1);
+            localStorage.setItem("Sodium Sulfate", c22);
+            localStorage.setItem("Albegal A", c4);
+            localStorage.setItem("Tinegal NT", c25);
+            localStorage.setItem("Albafluid SL Conc", c3);
+            localStorage.setItem("Albaflow SF Plus", c2);
+            localStorage.setItem("Univadine DFM", c27);
+        };
+
+        // Dyes Math:
+
+        if (dpC === "2209-8038 Midnight") { 
+            var d16 = tlotcLS -= (w * 0.0018);
+            var d35 = tlr3blLS -= (w * 0.00188);
+            var d55 = tlb3rlLS -= (w * 0.0068);
+            var d3 = dlglLS -= (w * 0.00054);
+            var d30 = mnrLS -= (w * 0.0008);
+            var d50 = mnbLS -= (w * 0.0042);
+
+            localStorage.setItem("Terasil Orange TC", d16);
+            localStorage.setItem("Terasil Red 3BL", d35);
+            localStorage.setItem("Terasil Blue 3RL", d55);
+            localStorage.setItem("Doracryl Golden Yellow", d3);
+            localStorage.setItem("Maxilon Red GRL", d30);
+            localStorage.setItem("Maxilon Blue SL", d50);
+        };
+
+    };    
+    </script>
+</body>
+</html>

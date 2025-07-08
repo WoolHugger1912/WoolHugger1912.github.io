@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Yarn: 443 - 509</title>
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    .wrapper {
+        width:200px;
+    }
+
+    .customer {
+        width:75px;
+    }
+</style>
+</head>
+<body>
+<p><h1>SEE CODE FOR NOTES</h1></p>
+<br>
+<h1>Yarn Dips</h1>
+    <form action="mathInven.html" method="get">
+    <caption>What Color?</caption>
+    <input id="dipColor" list="dyeNumbers">
+    <datalist id="dyeNumbers">
+        <option value="444 Beige"></option>
+        <option value="481 Blue" ></option>
+        <option value="487 Green"></option>
+        <option value="488 Red"></option>
+        <option value="493 Blue"></option>
+    </datalist>
+    <br>
+    <br>
+    <caption>What Wool type?</caption>
+    <input id="dipWool" list="woolTypes">
+    <datalist id="woolTypes">
+        <option value="80A">80A-004</option>
+        <option value="36E">36E-004</option>
+        <option value="36B">36B-001</option>
+        <option value="48E">48E-004</option>
+        <option value="22G">22G-001</option>
+        <option value="72B">72B-002</option>
+        <option value="TE7">TE7-001</option>
+        <option value="PE5">PE5-001</option>
+    </datalist>
+    <br>
+    <br>
+    <caption>How many?</caption>
+    <p><input id="dipQuan" type="number" max="4"></p>
+    <br>
+    <br>
+    <caption>What's the weight?</caption>
+    <p><input id="cuStom" type="number"></p>
+    <p id="altW"><input id="cusTom" type="number"></p>
+    <br>
+    <br>
+    <caption>Is there a prescour?</caption>
+    <p><input type="radio" name="prscr" id="y"><label for="y">Yes</label></p>
+    <p><input type="radio" name="prscr" id="n"><label for="n">No</label></p>
+    <br>
+    <br>
+    <!-- Need datalist under id dipWool with wool options, check redundancies between different wool formulas -->
+    <input id="entEr" type="button" onclick="canRead()" value="Submit">
+    </form>
+
+    <script src="../../GlobVar.js"></script>
+
+    <script>
+        // canRead(); saveData(); redTest(); 
+    
+    // localStorage.setItem('score', JSON.stringify(playx.innerHTML));
+
+
+    // Special circumstance for two same color types, include or enter twice?
+    document.getElementById("altW").style.display = "none";
+
+    document.getElementById("dipQuan").addEventListener('input', (event) => {
+        const value = Number(event.target.value);
+
+        if (value === 2) {
+            document.getElementById("altW").style.display = "block";
+        } else {
+            document.getElementById("altW").style.display = "none";
+        };
+    })
+
+    document.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            document.getElementById("entEr").click();
+        }
+    });
+
+    function canRead() {
+        var dpQ = document.getElementById("dipQuan").value;
+        var dpC = document.getElementById("dipColor").value;
+        var dpW = document.getElementById("dipWool").value;
+        var w = document.getElementById("cuStom").value;
+        var wD = document.getElementById("cusTom").value;
+
+        if (document.getElementById("dipQuan").value == "") {
+            alert("Please enter how many!");
+        };
+        
+
+        // Chemical Math:
+
+        if (document.getElementById("y").checked) {
+            var c19 = smaLS -= (w * 0.04);
+            var c2 = afLS -= (w * 0.005);
+            var c26 = ucnLS -= (w * 0.02);
+
+            localStorage.setItem("Sodium Acetate", c19);
+            localStorage.setItem("Albaflow SF Plus", c2);
+            localStorage.setItem("Ultravon CN", c26);
+        };
+
+        if (dpC === "444 Beige") {
+            if (dpW === "PE5") {
+            var c22 = smsLS -= (w * 0.1);
+            var c6 =  agsLS -= (w * 0.01);
+            var c19 = smaLS -= (w * 0.02);
+            var c2 = afLS -= (w * 0.005);
+
+            localStorage.setItem("Sodium Sulfate", c22);
+            localStorage.setItem("Albegal Set", c6);                        
+            localStorage.setItem("Sodium Acetate", c19);
+            localStorage.setItem("Albaflow SF Plus", c2);
+            };
+        };
+
+        if (dpC === "481 Blue" || dpC === "487 Green" || dpC === "488 Red" || dpC === "493 Blue") {
+            if (dpW === "80A" || dpW === "36E" || dpW === "72B") {
+            // 481 BLUE DOES NOT HAVE A 72B FORMULA
+            // 488 RED DOES NOT HAVE A 72B FORMULA
+            // 488 RED DOES NOT HAVE A 80A FORMULA
+            // 493 BLUE NEEDS CHECKED; BELONGS TO 36E
+
+            var c22 = smsLS -= (w * 0.1);
+            var c6 =  agsLS -= (w * 0.01);
+            var c19 = smaLS -= (w * 0.02);
+            var c1 = aaLS -= (w * 0.04);
+            var c2 = afLS -= (w * 0.005);
+
+            localStorage.setItem("Sodium Sulfate", c22);
+            localStorage.setItem("Albegal Set", c6);
+            localStorage.setItem("Sodium Acetate", c19);
+            localStorage.setItem("Acetic Acid", c1);
+            localStorage.setItem("Albaflow SF Plus", c2);
+            };
+        };
+
+        // Dye Math:
+
+        if (dpC === "444 Beige") {
+            if (dpW === "PE5") {
+                var d4 = lty2rLS -= (w * 0.000188);
+                var d28 = ltrgLS -= (w * 0.000118);
+                var d41 = ltgrygLS -= (w * 0.000278);
+
+                localStorage.setItem("Lanaset Yellow 2R", d4);
+                localStorage.setItem("Lanaset Red G", d28);
+                localStorage.setItem("Lanaset Grey G", d41);
+            };
+        };
+
+        if (dpC === "481 Blue") {
+            if (dpW === "80A") {
+                var d4 = lty2rLS -= (w * 0.0001);
+                var d23 = ltr2bLS -= (w * 0.00072);
+                var d44 = ltb2raLS -= (w * 0.007);
+
+                localStorage.setItem("Lanaset Yellow 2R", d4);
+                localStorage.setItem("Lanaset Red 2B", d23)
+                localStorage.setItem("Lanaset Blue 2RA", d44);
+
+            } else if (dpW === "36E") {
+                var d4 = lty2rLS -= (w * 0.00005);
+                var d23 = ltr2bLS -= (w * 0.0008);
+                var d44 = ltb2raLS -= (w * 0.007);
+
+                localStorage.setItem("Lanaset Yellow 2R", d4);
+                localStorage.setItem("Lanaset Red 2B", d23)
+                localStorage.setItem("Lanaset Blue 2RA", d44);
+                
+            };
+        };
+
+        if (dpC === "487 Green") {
+            if (dpW === "80A") {
+                var d45 = ltb5gLS -= (w * 0.001);
+                var d63 = ltgrnbLS -= (w * 0.00018);
+                var d41 = ltgrygLS -= (w * 0.00066);
+
+                localStorage.setItem("Lanaset Blue 5G", d45);
+                localStorage.setItem("Lanaset Green B", d63);
+                localStorage.setItem("Lanaset Grey G", d41);
+
+            } else if (dpW === "36E") {
+                var d45 = ltb5gLS -= (w * 0.0008);
+                var d63 = ltgrnbLS -= (w * 0.0005);
+                var d41 = ltgrygLS -= (w * 0.00082);
+
+                localStorage.setItem("Lanaset Blue 5G", d45);
+                localStorage.setItem("Lanaset Green B", d63);
+                localStorage.setItem("Lanaset Grey G", d41);
+                
+            } else if (dpW === "72B") {
+                var d4 = lty2rLS -= (w * 0.00018);
+                var d28 = ltrgLS -= (w * 0.0004);
+                var d45 = ltb5gLS -= (w * 0.0023);
+
+                localStorage.setItem("Lanaset Yellow 2R", d4);
+                localStorage.setItem("Lanaset Red G", d28);
+                localStorage.setItem("Lanaset Blue 5G", d45);
+            };
+        };
+
+        if (dpC === "488 Red") {
+            if (dpW === "36E") {
+                var d23 = ltr2bLS -= (w * 0.0032);
+                var d20 = bdrLS -= (w * 0.0055);
+                var d44 = ltb2raLS -= (w * 0.0034);
+
+                localStorage.setItem("Lanaset Red 2B", d23);
+                localStorage.setItem("Bemacid Red F-4B", d20);
+                localStorage.setItem("Lanaset Blue 2RA", d44);
+            };
+        };
+
+        if (dpC === "493 Blue") {
+            if (dpW === "36E") {
+                var d5 = lty4gnLS -= (w * 0.000055);
+                var d39 = ltvLS -= (w * 0.0035);
+                var d44 = ltb2raLS -= (w * 0.0118);
+                var d45 = ltb5gLS -= (w * 0.00125);
+
+                localStorage.setItem("Lanaset Yellow 4GN", d5);
+                localStorage.setItem("Lanaset Violet B", d39);
+                localStorage.setItem("Lanaset Blue 2RA", d44);
+                localStorage.setItem("Lanaset Blue 5G", d45);
+            };
+        };
+        
+    };
+    </script>
+</body>
+</html>
+
